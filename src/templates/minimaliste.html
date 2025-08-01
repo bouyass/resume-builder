@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Minimal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #fff;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 60px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .contact-line {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .contact-line a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 400;
+        }
+
+        .content-block {
+            margin-bottom: 30px;
+        }
+
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .block-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .block-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .block-date {
+            font-size: 0.9rem;
+            color: #999;
+            font-weight: 300;
+        }
+
+        .block-description {
+            color: #555;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .block-description ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .block-description li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-list {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Summary */
+        .summary {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 40px 30px;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .block-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .block-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header with user data placeholders -->
+        <div class="header">
+            <h1 class="name" id="user-name">[NOM PRENOM]</h1>
+            <p class="title" id="user-job-title">[TITRE PROFESSIONNEL]</p>
+            <div class="contact-line">
+                <span id="user-email">[email@exemple.com]</span> • 
+                <span id="user-phone">[+33 X XX XX XX XX]</span> • 
+                <span id="user-location">[Ville, France]</span>
+                <br>
+                <a href="#" id="user-linkedin">[LinkedIn]</a> • 
+                <a href="#" id="user-website">[Site Web]</a>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="section">
+            <h2 class="section-title">Résumé</h2>
+            <div class="summary" id="user-summary">
+                [Votre résumé professionnel en quelques lignes. Décrivez votre expertise, vos objectifs de carrière et ce qui vous distingue dans votre domaine.]
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+            
+            <div class="experience-list" id="user-experiences">
+                <div class="content-block experience-item">
+                    <div class="block-header">
+                        <div>
+                            <div class="block-title experience-title">[Titre du Poste]</div>
+                            <div class="block-subtitle experience-company">[Nom de l'Entreprise]</div>
+                        </div>
+                        <div class="block-date experience-dates">[2022 - Présent]</div>
+                    </div>
+                    <div class="block-description experience-description">
+                        [Description des responsabilités et réalisations principales]
+                        <ul>
+                            <li>[Réalisation quantifiée]</li>
+                            <li>[Projet important mené]</li>
+                            <li>[Amélioration apportée]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-block experience-item">
+                    <div class="block-header">
+                        <div>
+                            <div class="block-title experience-title">[Poste Précédent]</div>
+                            <div class="block-subtitle experience-company">[Entreprise]</div>
+                        </div>
+                        <div class="block-date experience-dates">[2020 - 2022]</div>
+                    </div>
+                    <div class="block-description experience-description">
+                        [Description du poste et missions principales]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2 class="section-title">Formation</h2>
+            
+            <div class="education-list" id="user-education">
+                <div class="content-block education-item">
+                    <div class="block-header">
+                        <div>
+                            <div class="block-title education-degree">[Diplôme]</div>
+                            <div class="block-subtitle education-school">[École/Université]</div>
+                        </div>
+                        <div class="block-date education-year">[2020]</div>
+                    </div>
+                    <div class="block-description education-description">
+                        [Mention, spécialisation ou projets remarquables]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2 class="section-title">Compétences</h2>
+            
+            <div class="skills-grid" id="user-skills">
+                <div class="skill-category">
+                    <div class="skill-category-title">Techniques</div>
+                    <div class="skill-list technical-skills">
+                        [JavaScript, Python, React, Node.js]
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Outils</div>
+                    <div class="skill-list tools-skills">
+                        [Git, Docker, AWS, Figma]
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Langues</div>
+                    <div class="skill-list language-skills">
+                        Français (Natif), Anglais (Courant), Espagnol (Intermédiaire)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section (Optional) -->
+        <div class="section">
+            <h2 class="section-title">Projets</h2>
+            
+            <div class="projects-list" id="user-projects">
+                <div class="content-block project-item">
+                    <div class="block-header">
+                        <div>
+                            <div class="block-title project-name">[Nom du Projet]</div>
+                            <div class="block-subtitle project-type">[Type de projet]</div>
+                        </div>
+                        <div class="block-date project-date">[2023]</div>
+                    </div>
+                    <div class="block-description project-description">
+                        [Description du projet, technologies utilisées et résultats obtenus]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

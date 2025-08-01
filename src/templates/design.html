@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Design - Prénom NOM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            z-index: 10;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: linear-gradient(180deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-30px); }
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .sidebar-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 3px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-percentage {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 10px;
+            position: relative;
+            animation: skillLoad 2s ease-out;
+        }
+
+        @keyframes skillLoad {
+            0% { width: 0%; }
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .language-level {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 50px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #636e72;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e9ecef;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .item-company {
+            font-size: 1.1rem;
+            color: #636e72;
+            font-weight: 500;
+        }
+
+        .item-date {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .item-description {
+            color: #636e72;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .achievements {
+            margin-top: 15px;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #636e72;
+        }
+
+        .achievement::before {
+            content: '✓';
+            color: #4ecdc4;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 350px 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 25px;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 40px 30px;
+            }
+            
+            .main-content {
+                padding: 40px 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item::before {
+                left: -23px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .main-grid {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="main-grid">
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h1 class="profile-name">Alex MARTIN</h1>
+                    <p class="profile-title">Creative Designer & Developer</p>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Contact</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>alex.martin@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>+33 6 12 34 56 78</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>Lyon, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <span>linkedin.com/in/alexmartin</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span>github.com/alexmartin</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Compétences</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>UI/UX Design</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>React & Next.js</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Figma & Adobe CC</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript/TypeScript</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Brand Identity</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Langues</h3>
+                    <div class="language-item">
+                        <span>Français</span>
+                        <span class="language-level">Natif</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Anglais</span>
+                        <span class="language-level">Courant</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Espagnol</span>
+                        <span class="language-level">Intermédiaire</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+                <section class="section">
+                    <h2 class="section-title">À propos</h2>
+                    <p class="intro-text">
+                        Designer créatif et développeur passionné avec 6 ans d'expérience dans la création d'expériences 
+                        digitales exceptionnelles. Spécialisé dans l'intersection entre design et technologie, je transforme 
+                        des idées complexes en solutions visuelles élégantes et fonctionnelles. Mon approche combine esthétique 
+                        moderne et performance technique pour créer des produits qui marquent les esprits.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Expérience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Lead Creative Developer</h3>
+                                    <p class="item-company">Digital Studio Pro</p>
+                                </div>
+                                <span class="item-date">2022 - Présent</span>
+                            </div>
+                            <p class="item-description">
+                                Direction créative et technique d'une équipe de 5 designers/développeurs. 
+                                Création de sites web et applications primés pour des marques internationales.
+                            </p>
+                            <div class="achievements">
+                                <div class="achievement">Augmentation de 150% de l'engagement utilisateur moyen</div>
+                                <div class="achievement">12 projets primés dans des concours internationaux</div>
+                                <div class="achievement">Mise en place d'un système de design utilisé par 3 équipes</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Senior UI/UX Designer</h3>
+                                    <p class="item-company">TechVision Agency</p>
+                                </div>
+                                <span class="item-date">2020 - 2022</span>
+                            </div>
+                            <p class="item-description">
+                                Conception d'interfaces utilisateur pour des startups et entreprises du Fortune 500. 
+                                Recherche utilisateur, prototypage et tests d'utilisabilité.
+                            </p>
+                            <div class="achievements">
+                                <div class="achievement">Redesign complet de 8 applications mobiles</div>
+                                <div class="achievement">Réduction de 40% du taux d'abandon utilisateur</div>
+                                <div class="achievement">Formation de 15+ développeurs aux principes UX</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Designer Web & Mobile</h3>
+                                    <p class="item-company">Creative Lab</p>
+                                </div>
+                                <span class="item-date">2018 - 2020</span>
+                            </div>
+                            <p class="item-description">
+                                Création de sites web responsive et d'applications mobiles. Collaboration étroite 
+                                avec les équipes marketing pour optimiser les conversions.
+                            </p>
+                            <div class="achievements">
+                                <div class="achievement">+300% d'amélioration des taux de conversion</div>
+                                <div class="achievement">Portfolio de 25+ projets clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Formation</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Master Design Interactif</h3>
+                                    <p class="item-company">École Supérieure d'Art et Design</p>
+                                </div>
+                                <span class="item-date">2016 - 2018</span>
+                            </div>
+                            <p class="item-description">
+                                Spécialisation en design numérique, interfaces utilisateur et expérience utilisateur. 
+                                Projet de fin d'études : Application de réalité augmentée pour l'art contemporain.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Licence Arts Appliqués</h3>
+                                    <p class="item-company">Université de Lyon</p>
+                                </div>
+                                <span class="item-date">2013 - 2016</span>
+                            </div>
+                            <p class="item-description">
+                                Formation généraliste en arts appliqués avec spécialisation en design graphique 
+                                et communication visuelle. Mention Très Bien.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

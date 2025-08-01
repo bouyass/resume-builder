@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Corporate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f6f9;
+            padding: 30px 20px;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 40px;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .profile-details {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.8;
+        }
+
+        .summary-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #fff;
+        }
+
+        .summary-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            min-height: 600px;
+        }
+
+        .left-panel {
+            padding: 40px;
+            background: #fff;
+        }
+
+        .right-panel {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-left: 1px solid #e9ecef;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1e3c72;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #2a5298;
+        }
+
+        /* Experience Items */
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1e3c72;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.1);
+            transform: translateX(3px);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 4px;
+        }
+
+        .item-subtitle {
+            color: #2a5298;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            background: #1e3c72;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .item-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .item-description ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 6px;
+        }
+
+        /* Right Panel Sections */
+        .right-section {
+            margin-bottom: 35px;
+        }
+
+        .right-section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* Skills */
+        .skills-list {
+            margin-bottom: 20px;
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2a5298;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-items {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .skill-level {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .language-level {
+            background: #e9ecef;
+            color: #666;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        /* Certifications */
+        .cert-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #fff;
+            border-radius: 6px;
+            border-left: 3px solid #2a5298;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #1e3c72;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .cert-issuer {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 30px 20px;
+            }
+            
+            .right-panel {
+                border-left: none;
+                border-top: 1px solid #e9ecef;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Professional Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="profile-image" id="user-avatar">👔</div>
+                
+                <div class="profile-details">
+                    <h1 class="name" id="user-name">[PRÉNOM NOM]</h1>
+                    <p class="job-title" id="user-job-title">[Titre Professionnel Senior]</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span id="user-email">[email@entreprise.com]</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span id="user-phone">[+33 X XX XX XX XX]</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span id="user-location">[Ville, France]</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <span id="user-linkedin">[LinkedIn Profil]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="summary-box">
+                <div class="summary-text" id="user-summary">
+                    [Résumé exécutif mettant en avant votre expertise, vos années d'expérience et votre valeur ajoutée pour l'entreprise. Focus sur les résultats mesurables et l'impact business.]
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Left Panel - Main Content -->
+            <div class="left-panel">
+                <!-- Professional Experience -->
+                <div class="section">
+                    <h2 class="section-title">Expérience Professionnelle</h2>
+                    
+                    <div class="experiences-list" id="user-experiences">
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title experience-title">[Directeur/Manager/Senior...]</div>
+                                    <div class="item-subtitle experience-company">[Nom de l'Entreprise]</div>
+                                </div>
+                                <div class="item-date experience-dates">[2022 - Présent]</div>
+                            </div>
+                            <div class="item-description experience-description">
+                                [Description stratégique du poste avec focus sur le leadership, la gestion d'équipe et les résultats business]
+                                <ul>
+                                    <li>[Résultat quantifié (ex: +25% de CA, équipe de 15 personnes)]</li>
+                                    <li>[Initiative stratégique menée avec impact mesurable]</li>
+                                    <li>[Amélioration de processus ou innovation implementée]</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title experience-title">[Poste Précédent]</div>
+                                    <div class="item-subtitle experience-company">[Entreprise Précédente]</div>
+                                </div>
+                                <div class="item-date experience-dates">[2019 - 2022]</div>
+                            </div>
+                            <div class="item-description experience-description">
+                                [Missions et responsabilités avec accent sur la progression de carrière]
+                                <ul>
+                                    <li>[Réalisation majeure avec impact business]</li>
+                                    <li>[Projet de transformation ou d'optimisation]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Formation</h2>
+                    
+                    <div class="education-list" id="user-education">
+                        <div class="education-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title education-degree">[Master/MBA/Diplôme d'Ingénieur]</div>
+                                    <div class="item-subtitle education-school">[Grande École/Université]</div>
+                                </div>
+                                <div class="item-date education-year">[2019]</div>
+                            </div>
+                            <div class="item-description education-description">
+                                [Spécialisation, mention, ou projet de fin d'études remarquable]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Projects -->
+                <div class="section">
+                    <h2 class="section-title">Projets Clés</h2>
+                    
+                    <div class="projects-list" id="user-projects">
+                        <div class="project-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title project-name">[Transformation Digitale/Restructuration/Innovation]</div>
+                                    <div class="item-subtitle project-scope">[Portée du projet]</div>
+                                </div>
+                                <div class="item-date project-date">[2023]</div>
+                            </div>
+                            <div class="item-description project-description">
+                                [Description du projet stratégique, budget géré, équipe dirigée, et résultats obtenus]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Skills & Additional Info -->
+            <div class="right-panel">
+                <!-- Core Competencies -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Compétences Clés</h3>
+                    
+                    <div class="skills-list" id="user-core-skills">
+                        <div class="skill-category-title">Leadership & Management</div>
+                        <div class="skill-items">Management d'équipe, Stratégie, Conduite du changement</div>
+                        
+                        <div class="skill-category-title">Business & Finance</div>
+                        <div class="skill-items">Analyse financière, P&L, Budgeting, ROI</div>
+                        
+                        <div class="skill-category-title">Technique</div>
+                        <div class="skill-items">Data Analysis, CRM, ERP, Digital Tools</div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills with Levels -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Expertise Technique</h3>
+                    
+                    <div class="technical-skills" id="user-technical-skills">
+                        <div class="skill-bar-container">
+                            <div class="skill-name">
+                                <span>Project Management</span>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar-container">
+                            <div class="skill-name">
+                                <span>Data Analysis</span>
+                                <span class="skill-level">Avancé</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar-container">
+                            <div class="skill-name">
+                                <span>Digital Marketing</span>
+                                <span class="skill-level">Avancé</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Langues</h3>
+                    
+                    <div class="languages-list" id="user-languages">
+                        <div class="language-item">
+                            <span class="language-name">Français</span>
+                            <span class="language-level">Natif</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Anglais</span>
+                            <span class="language-level">Courant</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Allemand</span>
+                            <span class="language-level">Intermédiaire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="right-section">
+                    <h3 class="right-section-title">Certifications</h3>
+                    
+                    <div class="certifications-list" id="user-certifications">
+                        <div class="cert-item">
+                            <div class="cert-name">PMP - Project Management</div>
+                            <div class="cert-issuer">PMI Institute</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Agile Scrum Master</div>
+                            <div class="cert-issuer">Scrum Alliance</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Google Analytics Certified</div>
+                            <div class="cert-issuer">Google</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

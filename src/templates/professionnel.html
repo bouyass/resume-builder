@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Prénom NOM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .sidebar .section-title {
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .item-company {
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .item-description {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-bar {
+            flex: 1;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .languages-list, .interests-list {
+            list-style: none;
+        }
+
+        .languages-list li, .interests-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .languages-list li:last-child, .interests-list li:last-child {
+            border-bottom: none;
+        }
+
+        .language-level {
+            background: #e9ecef;
+            color: #666;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        .interests-list li {
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .profile-text {
+            color: #666;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .sidebar, .content {
+                padding: 30px 20px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Prénom NOM</h1>
+                <p class="title">Développeur Full-Stack</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>prenom.nom@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 1 23 45 67 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/prenomnom</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Compétences</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Langues</h2>
+                    <ul class="languages-list">
+                        <li>
+                            <span>Français</span>
+                            <span class="language-level">Natif</span>
+                        </li>
+                        <li>
+                            <span>Anglais</span>
+                            <span class="language-level">Courant</span>
+                        </li>
+                        <li>
+                            <span>Espagnol</span>
+                            <span class="language-level">Intermédiaire</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Centres d'intérêt</h2>
+                    <ul class="interests-list">
+                        <li>
+                            <i class="fas fa-code"></i>
+                            <span>Développement open source</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-camera"></i>
+                            <span>Photographie</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-mountain"></i>
+                            <span>Randonnée</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-book"></i>
+                            <span>Lecture technologique</span>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="section">
+                    <h2 class="section-title">Profil</h2>
+                    <p class="profile-text">
+                        Développeur full-stack passionné avec 5 ans d'expérience dans la création d'applications web modernes. 
+                        Spécialisé dans les technologies JavaScript, avec une forte expertise en React, Node.js et bases de données. 
+                        Capable de gérer des projets de A à Z, de la conception à la mise en production. 
+                        Toujours à la recherche de nouveaux défis techniques et désireux d'apporter des solutions innovantes.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Expérience Professionnelle</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Développeur Full-Stack Senior</div>
+                                <div class="item-company">TechCorp Solutions</div>
+                            </div>
+                            <span class="item-date">Jan 2022 - Présent</span>
+                        </div>
+                        <p class="item-description">
+                            Développement et maintenance d'applications web complexes pour des clients internationaux. 
+                            Encadrement d'une équipe de 3 développeurs juniors. Migration réussie de l'architecture legacy 
+                            vers une solution microservices moderne, réduisant les temps de réponse de 40%.
+                        </p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Développeur Front-End</div>
+                                <div class="item-company">Digital Innovation</div>
+                            </div>
+                            <span class="item-date">Mar 2020 - Déc 2021</span>
+                        </div>
+                        <p class="item-description">
+                            Création d'interfaces utilisateur responsive et accessibles avec React et TypeScript. 
+                            Collaboration étroite avec l'équipe UX/UI pour traduire les maquettes en code fonctionnel. 
+                            Mise en place de tests automatisés qui ont amélioré la qualité du code de 30%.
+                        </p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Développeur Web Junior</div>
+                                <div class="item-company">StartupWeb</div>
+                            </div>
+                            <span class="item-date">Sep 2019 - Fév 2020</span>
+                        </div>
+                        <p class="item-description">
+                            Premier poste en développement web. Participation au développement de l'application principale 
+                            de l'entreprise. Apprentissage rapide des meilleures pratiques en développement agile et 
+                            contribution active aux code reviews.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Formation</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Master Informatique</div>
+                                <div class="item-company">Université Paris-Saclay</div>
+                            </div>
+                            <span class="item-date">2017 - 2019</span>
+                        </div>
+                        <p class="item-description">
+                            Spécialisation en développement logiciel et systèmes distribués. 
+                            Projet de fin d'études : Développement d'une plateforme e-commerce avec microservices.
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Licence Informatique</div>
+                                <div class="item-company">Université Pierre et Marie Curie</div>
+                            </div>
+                            <span class="item-date">2014 - 2017</span>
+                        </div>
+                        <p class="item-description">
+                            Formation généraliste en informatique couvrant la programmation, les algorithmes, 
+                            les bases de données et les réseaux.
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

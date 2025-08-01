@@ -1,0 +1,310 @@
+{
+  "resume": {
+    "title": "Resume Builder",
+    "navigation": {
+      "progress": "{completed}/{total} completed",
+      "sections": {
+        "personal": "Personal Info",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "projects": "Projects",
+        "awards": "Awards",
+        "hobbies": "Hobbies"
+      }
+    },
+    "sections": {
+      "personal": {
+        "title": "Personal Information",
+        "description": "Tell us about yourself. This information will appear at the top of your resume.",
+        "fields": {
+          "photo": {
+            "upload": "Upload Photo",
+            "change": "Change Photo",
+            "remove": "Remove"
+          },
+          "fullName": "Full Name",
+          "title": "Professional Title",
+          "age": "Age",
+          "email": "Email",
+          "phone": "Phone",
+          "location": "Location",
+          "about": "About Me",
+          "website": "Portfolio Website",
+          "linkedin": "LinkedIn Profile",
+          "github": "GitHub Profile",
+          "about_placeholder": "Brief professional summary...",
+          "about_helper": "Write 2-4 sentences about your career objectives and key strengths",
+          "social": {
+            "title": "Social Links"
+          }
+        },
+        "placeholders": {
+          "fullName": "John Doe",
+          "title": "Software Engineer",
+          "age": "e.g., 25",
+          "email": "john@example.com",
+          "phone": "+1 234 567 890",
+          "location": "City, Country",
+          "about": "Share your professional experience, goals, and key skills...",
+          "website": "https://yourportfolio.com",
+          "linkedin": "https://linkedin.com/in/johndoe",
+          "github": "https://github.com/johndoe"
+        }
+      },
+      "experience": {
+        "title": "Work Experience",
+        "description": "Add your professional experience and achievements.",
+        "fields": {
+          "company": "Company",
+          "position": "Position",
+          "startDate": "Start Date",
+          "endDate": "End Date",
+          "current": "Current Position",
+          "description": "Description"
+        },
+        "placeholders": {
+          "company": "Company name",
+          "position": "Position title",
+          "description": "Describe your responsibilities and achievements..."
+        }
+      },
+      "skills": {
+        "title": "Skills",
+        "description": "List your skills by category. Toggle level indicators if needed.",
+        "levels": {
+          "beginner": "Beginner",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced",
+          "expert": "Expert"
+        },
+        "placeholders": {
+          "name": "Skill name",
+          "category": "e.g., Programming Languages"
+        }
+      },
+      "education": {
+        "title": "Education",
+        "description": "Add your academic background and qualifications.",
+        "fields": {
+          "institution": "Institution",
+          "degree": "Degree/Certificate",
+          "gpa": "GPA/Score",
+          "description": "Description"
+        },
+        "placeholders": {
+          "institution": "University/School name",
+          "degree": "e.g., Bachelor's in Computer Science",
+          "gpa": "e.g., 3.8/4.0",
+          "description": "Describe your academic achievements..."
+        }
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Showcase your notable projects and achievements.",
+        "fields": {
+          "name": "Project Name",
+          "role": "Role",
+          "url": "Project URL",
+          "technologies": "Technologies Used",
+          "description": "Description"
+        },
+        "placeholders": {
+          "name": "Project name",
+          "role": "Your role in the project",
+          "url": "Project/repository link",
+          "technologies": "e.g., React, Node.js, MongoDB",
+          "description": "Describe the project and your contributions..."
+        }
+      },
+      "awards": {
+        "title": "Awards & Certifications",
+        "description": "Add your achievements, certifications, and recognition.",
+        "fields": {
+          "title": "Title",
+          "issuer": "Issuing Organization",
+          "date": "Date Received",
+          "expiryDate": "Expiry Date",
+          "description": "Description"
+        },
+        "placeholders": {
+          "name": "Certificate/Award name",
+          "issuer": "Organization name",
+          "description": "Describe the achievement..."
+        }
+      },
+      "hobbies": {
+        "title": "Hobbies & Interests",
+        "description": "Share your interests and activities outside of work.",
+        "placeholder": "Type a hobby and press Enter",
+        "placeholders": {
+          "input": "Type a hobby and press Enter"
+        }
+      }
+    },
+    "buttons": {
+      "add": "Add {item}",
+      "remove": "Remove",
+      "save": "Save Progress",
+      "preview": "Preview Resume"
+    },
+    "errors": {
+      "required_field": "This field is required",
+      "invalid_email": "Please enter a valid email address",
+      "invalid_phone": "Please enter a valid phone number",
+      "invalid_url": "Please enter a valid URL",
+      "name_too_short": "Name must be at least 2 characters",
+      "about_too_long": "About section must be less than 500 characters",
+      "invalid_age": "Age must be between 16 and 100",
+      "end_date_before_start": "End date cannot be before start date",
+      "position_required": "Position is required",
+      "start_date_required": "Start date is required",
+      "end_date_required": "End date is required",
+      "institution_required": "Institution is required",
+      "degree_required": "Degree is required",
+      "project_name_required": "Project name is required",
+      "project_role_required": "Role is required",
+      "award_title_required": "Title is required",
+      "award_issuer_required": "Issuing organization is required",
+      "award_date_required": "Date is required",
+      "fix_errors": "Please fix all errors before proceeding to preview"
+    }
+  },
+  "landing": {
+    "logo": "AI Resume",
+    "create_resume": "Create Resume",
+    "hero": {
+      "title": "Create Your Perfect Resume with AI",
+      "subtitle": "Transform your career journey with our AI-powered resume builder. Professional, personalized, and ready in minutes.",
+      "get_started": "Get Started Free",
+      "learn_more": "Learn More"
+    },
+    "features": {
+      "ai": {
+        "title": "AI-Powered",
+        "description": "Smart content suggestions tailored to your industry"
+      },
+      "fast": {
+        "title": "Lightning Fast",
+        "description": "Create your resume in minutes, not hours"
+      },
+      "ats": {
+        "title": "ATS-Friendly",
+        "description": "Optimized for Applicant Tracking Systems"
+      }
+    }
+  },
+  "customizer": {
+    "title": "Customize Resume",
+    "theme": {
+      "title": "Theme",
+      "modern": "Modern",
+      "classic": "Classic",
+      "minimal": "Minimal",
+      "professional": "Professional"
+    },
+    "colors": {
+      "title": "Colors",
+      "selection_info": "Select up to 3 colors. The order determines their importance in the design - primary, secondary, and accent.",
+      "ocean_blue": "Ocean Blue",
+      "forest_green": "Forest Green",
+      "royal_purple": "Royal Purple",
+      "prof_gray": "Professional Gray",
+      "ruby_red": "Ruby Red",
+      "sunset": "Sunset Orange",
+      "ocean_teal": "Ocean Teal",
+      "midnight": "Midnight Indigo"
+    },
+    "fonts": {
+      "title": "Typography",
+      "preview_text": "Aa",
+      "text_size": "Text Size",
+      "base_size": "Base Size",
+      "modern_clean": "Modern and clean",
+      "professional": "Professional and readable",
+      "elegant": "Elegant and stylish",
+      "classic": "Classic and timeless",
+      "sizes": {
+        "h1": "Heading 1",
+        "h2": "Heading 2",
+        "h3": "Heading 3",
+        "h4": "Heading 4",
+        "body": "Body Text",
+        "small": "Small Text"
+      }
+    },
+    "sizing": {
+      "title": "Sizing",
+      "text": "Text Sizes",
+      "base_size": "Base Size",
+      "text_sizes": {
+        "h1": "Heading 1",
+        "h2": "Heading 2",
+        "h3": "Heading 3",
+        "h4": "Heading 4",
+        "body": "Body Text",
+        "small": "Small Text"
+      },
+      "spacing": "Spacing",
+      "line_height": "Line Height",
+      "paragraph": "Paragraph Spacing",
+      "margins": "Page Margins",
+      "margins_top": "Top Margin",
+      "margins_right": "Right Margin",
+      "margins_bottom": "Bottom Margin",
+      "margins_left": "Left Margin"
+    },
+    "paper": {
+      "title": "Page Setup",
+      "show_header": "Show Header",
+      "show_page_numbers": "Show Page Numbers",
+      "size": "Paper Size",
+      "sizes": {
+        "a4": "A4",
+        "letter": "Letter",
+        "legal": "Legal"
+      }
+    },
+    "sections": {
+      "title": "Sections",
+      "visibility": "Visibility"
+    },
+    "buttons": {
+      "preview": "Preview Resume",
+      "download": "Download PDF",
+      "generate": "Generate my PDF"
+    },
+    "progress": {
+      "almost_done": "Looking good! Your resume is taking shape 🎨",
+      "generating": "Generating your perfect resume... ✨"
+    }
+  },
+  "viewer": {
+    "back": "Back to Editor",
+    "download": "Download PDF",
+    "generating": "Generating your resume..."
+  },
+  "payment": {
+    "title": "Download PDF Resume",
+    "one_time": "One-time payment",
+    "pay_now": "Pay & Download",
+    "emailAddress": "Adresse mail",
+    "paymentInformation": "Information de paiement",
+    "cardNumber": "Numéro de carte",
+    "securePayment": "Payement sécurisé",
+    "pay": "Payer",
+    "features": {
+      "download_pdf": "High-quality PDF download",
+      "unlimited_edits": "Unlimited edits and downloads",
+      "emailSent": "Envoi par mail"
+    },
+    "copyLink": "Copy Link"
+  },
+  "sidebar": {
+    "templates": "Templates"
+  },
+  "headerBar":  {
+    "getMyResume": "Get my resume",
+    "goBackToInputs": "Go back to inputs"
+  }
+} 

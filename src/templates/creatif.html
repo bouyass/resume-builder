@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Créatif</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(180deg); }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 4px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        /* Experience Cards */
+        .experience-card, .education-card, .project-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4ecdc4;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 70%);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-left-color: #ff6b6b;
+        }
+
+        .experience-card:hover::before {
+            top: -25%;
+            right: -25%;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: #4ecdc4;
+            font-weight: 500;
+        }
+
+        .card-date {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: #555;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-description ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .card-description li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 8s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skill-category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-list {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Summary */
+        .summary-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .profile-info {
+                text-align: center;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Animated Header -->
+        <div class="header">
+            <div class="profile-section">
+                <div class="profile-avatar" id="user-avatar">👤</div>
+                <div class="profile-info">
+                    <h1 class="name" id="user-name">[VOTRE NOM]</h1>
+                    <p class="job-title" id="user-job-title">[Votre Titre Créatif]</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item" id="user-email">📧 [email@exemple.com]</div>
+                <div class="contact-item" id="user-phone">📱 [+33 X XX XX XX XX]</div>
+                <div class="contact-item" id="user-location">📍 [Ville, France]</div>
+                <div class="contact-item" id="user-linkedin">💼 [LinkedIn]</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Summary -->
+                    <div class="section">
+                        <div class="summary-card">
+                            <div class="summary-text" id="user-summary">
+                                [Votre pitch créatif qui reflète votre personnalité et vos ambitions professionnelles. Soyez authentique et inspirant !]
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="section">
+                        <h2 class="section-title">Expériences</h2>
+                        <div class="experiences-list" id="user-experiences">
+                            <div class="experience-card">
+                                <div class="card-header">
+                                    <div>
+                                        <div class="card-title experience-title">[Titre du Poste]</div>
+                                        <div class="card-subtitle experience-company">[Entreprise Innovante]</div>
+                                    </div>
+                                    <div class="card-date experience-dates">[2022 - Maintenant]</div>
+                                </div>
+                                <div class="card-description experience-description">
+                                    [Décrivez vos missions avec passion et créativité]
+                                    <ul>
+                                        <li>[Impact mesurable et concret]</li>
+                                        <li>[Innovation ou amélioration apportée]</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="experience-card">
+                                <div class="card-header">
+                                    <div>
+                                        <div class="card-title experience-title">[Poste Précédent]</div>
+                                        <div class="card-subtitle experience-company">[Autre Entreprise]</div>
+                                    </div>
+                                    <div class="card-date experience-dates">[2020 - 2022]</div>
+                                </div>
+                                <div class="card-description experience-description">
+                                    [Missions et réalisations marquantes]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Skills -->
+                    <div class="section">
+                        <h2 class="section-title">Compétences</h2>
+                        <div class="skills-container" id="user-skills">
+                            <div class="skill-category">
+                                <div class="skill-category-title">💻 Tech</div>
+                                <div class="skill-list technical-skills">
+                                    [JavaScript • React • Python • Node.js]
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <div class="skill-category-title">🎨 Design</div>
+                                <div class="skill-list design-skills">
+                                    [Figma • Adobe • UI/UX • Créativité]
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <div class="skill-category-title">🌍 Langues</div>
+                                <div class="skill-list language-skills">
+                                    Français • Anglais • Espagnol
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="section">
+                        <h2 class="section-title">Formation</h2>
+                        <div class="education-list" id="user-education">
+                            <div class="education-card">
+                                <div class="card-header">
+                                    <div>
+                                        <div class="card-title education-degree">[Diplôme]</div>
+                                        <div class="card-subtitle education-school">[École/Université]</div>
+                                    </div>
+                                    <div class="card-date education-year">[2020]</div>
+                                </div>
+                                <div class="card-description education-description">
+                                    [Spécialisation ou projet remarquable]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="section">
+                        <h2 class="section-title">Projets</h2>
+                        <div class="projects-list" id="user-projects">
+                            <div class="project-card">
+                                <div class="card-header">
+                                    <div>
+                                        <div class="card-title project-name">[Projet Créatif]</div>
+                                        <div class="card-subtitle project-type">[Type/Contexte]</div>
+                                    </div>
+                                    <div class="card-date project-date">[2023]</div>
+                                </div>
+                                <div class="card-description project-description">
+                                    [Description captivante du projet et de son impact]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

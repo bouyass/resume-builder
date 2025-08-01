@@ -1,0 +1,227 @@
+{
+  "resume": {
+    "title": "منشئ السيرة الذاتية",
+    "navigation": {
+      "progress": "{completed}/{total} مكتمل",
+      "sections": {
+        "personal": "المعلومات الشخصية",
+        "experience": "الخبرة",
+        "education": "التعليم",
+        "skills": "المهارات",
+        "projects": "المشاريع",
+        "awards": "الجوائز",
+        "hobbies": "الهوايات"
+      }
+    },
+    "sections": {
+      "skills": {
+        "title": "المهارات",
+        "description": "أدرج مهاراتك حسب الفئة. فعّل المستويات إذا لزم الأمر.",
+        "show_levels": "إظهار المستويات",
+        "levels": {
+          "beginner": "مبتدئ",
+          "intermediate": "متوسط",
+          "advanced": "متقدم",
+          "expert": "خبير"
+        },
+        "placeholders": {
+          "name": "اسم المهارة",
+          "category": "مثال: لغات البرمجة"
+        }
+      },
+      "education": {
+        "title": "التعليم",
+        "description": "أضف خلفيتك الأكاديمية ومؤهلاتك.",
+        "fields": {
+          "institution": "المؤسسة التعليمية",
+          "degree": "الشهادة",
+          "gpa": "المعدل/الدرجة",
+          "description": "الوصف"
+        },
+        "placeholders": {
+          "institution": "اسم الجامعة/المدرسة",
+          "degree": "مثال: بكالوريوس علوم الحاسب",
+          "gpa": "مثال: 4.5/5",
+          "description": "صف إنجازاتك الأكاديمية..."
+        }
+      },
+      "projects": {
+        "title": "المشاريع",
+        "description": "اعرض مشاريعك البارزة وإنجازاتك.",
+        "fields": {
+          "name": "اسم المشروع",
+          "role": "الدور",
+          "url": "رابط المشروع",
+          "technologies": "التقنيات المستخدمة",
+          "description": "الوصف"
+        },
+        "placeholders": {
+          "name": "اسم المشروع",
+          "role": "دورك في المشروع",
+          "url": "رابط المشروع",
+          "technologies": "مثال: React, Node.js, MongoDB",
+          "description": "صف المشروع ومساهماتك..."
+        }
+      },
+      "awards": {
+        "title": "الجوائز والشهادات",
+        "description": "أضف إنجازاتك وشهاداتك والتقدير الذي حصلت عليه.",
+        "fields": {
+          "title": "العنوان",
+          "issuer": "الجهة المانحة",
+          "date": "تاريخ الحصول",
+          "expiryDate": "تاريخ الانتهاء",
+          "description": "الوصف"
+        },
+        "placeholders": {
+          "name": "اسم الشهادة/الجائزة",
+          "issuer": "اسم المؤسسة المانحة",
+          "description": "صف الإنجاز..."
+        }
+      },
+      "hobbies": {
+        "title": "الهوايات",
+        "description": "شارك اهتماماتك وأنشطتك خارج العمل.",
+        "placeholder": "اكتب هواية واضغط Enter",
+        "placeholders": {
+          "input": "اكتب هواية واضغط Enter"
+        }
+      },
+      "personal": {
+        "title": "المعلومات الشخصية",
+        "description": "أخبرنا عن نفسك. ستظهر هذه المعلومات في أعلى سيرتك الذاتية.",
+        "fields": {
+          "photo": {
+            "upload": "رفع صورة",
+            "change": "تغيير الصورة",
+            "remove": "حذف"
+          },
+          "fullName": "الاسم الكامل",
+          "title": "المسمى الوظيفي",
+          "age": "العمر",
+          "email": "البريد الإلكتروني",
+          "phone": "الهاتف",
+          "location": "الموقع",
+          "about": "نبذة عني",
+          "website": "الموقع الشخصي",
+          "linkedin": "حساب LinkedIn",
+          "github": "حساب GitHub",
+          "about_placeholder": "ملخص مهني موجز...",
+          "about_helper": "اكتب 2-4 جمل عن أهدافك المهنية ونقاط قوتك",
+          "social": {
+            "title": "روابط التواصل الاجتماعي"
+          }
+        },
+        "placeholders": {
+          "fullName": "أحمد محمد",
+          "title": "مطور برمجيات",
+          "age": "مثال: 25",
+          "email": "ahmed@example.com",
+          "phone": "+966 51 234 5678",
+          "location": "الرياض، السعودية",
+          "about": "شارك خبرتك المهنية وأهدافك ومهاراتك الرئيسية...",
+          "website": "https://yourportfolio.com",
+          "linkedin": "https://linkedin.com/in/ahmedm",
+          "github": "https://github.com/ahmedm"
+        }
+      },
+      "experience": {
+        "title": "الخبرة المهنية",
+        "description": "أضف خبراتك المهنية وإنجازاتك.",
+        "fields": {
+          "company": "الشركة",
+          "position": "المنصب",
+          "startDate": "تاريخ البدء",
+          "endDate": "تاريخ الانتهاء",
+          "current": "الوظيفة الحالية",
+          "description": "الوصف"
+        },
+        "placeholders": {
+          "company": "اسم الشركة",
+          "position": "المسمى الوظيفي",
+          "description": "صف مسؤولياتك وإنجازاتك..."
+        }
+      }
+    },
+    "buttons": {
+      "add": "إضافة {item}",
+      "remove": "حذف",
+      "save": "حفظ",
+      "preview": "معاينة"
+    },
+    "errors": {
+      "required_field": "هذا الحقل مطلوب",
+      "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
+      "invalid_phone": "يرجى إدخال رقم هاتف صحيح",
+      "invalid_url": "يرجى إدخال رابط صحيح",
+      "name_too_short": "يجب أن يحتوي الاسم على حرفين على الأقل",
+      "about_too_long": "يجب أن يحتوي قسم نبذة عني على أقل من 500 حرف",
+      "invalid_age": "يجب أن يكون العمر بين 16 و 100 سنة",
+      "end_date_before_start": "لا يمكن أن يكون تاريخ الانتهاء قبل تاريخ البدء",
+      "position_required": "المنصب مطلوب",
+      "start_date_required": "تاريخ البدء مطلوب",
+      "end_date_required": "تاريخ الانتهاء مطلوب",
+      "institution_required": "المؤسسة التعليمية مطلوبة",
+      "degree_required": "الشهادة مطلوبة",
+      "project_name_required": "اسم المشروع مطلوب",
+      "project_role_required": "الدور مطلوب",
+      "award_title_required": "العنوان مطلوب",
+      "award_issuer_required": "الجهة المانحة مطلوبة",
+      "award_date_required": "التاريخ مطلوب",
+      "fix_errors": "يرجى تصحيح جميع الأخطاء قبل المتابعة"
+    }
+  },
+  "landing": {
+    "logo": "AI Resume",
+    "create_resume": "إنشاء السيرة الذاتية",
+    "hero": {
+      "title": "أنشئ سيرتك الذاتية المثالية بالذكاء الاصطناعي",
+      "subtitle": "حوّل مسيرتك المهنية مع منشئ السيرة الذاتية المدعوم بالذكاء الاصطناعي. احترافي، مخصص، وجاهز في دقائق.",
+      "get_started": "ابدأ مجاناً",
+      "learn_more": "اعرف المزيد"
+    },
+    "features": {
+      "ai": {
+        "title": "مدعوم بالذكاء الاصطناعي",
+        "description": "اقتراحات محتوى ذكية مصممة لمجال عملك"
+      },
+      "fast": {
+        "title": "سريع جداً",
+        "description": "أنشئ سيرتك الذاتية في دقائق، وليس ساعات"
+      },
+      "ats": {
+        "title": "متوافق مع ATS",
+        "description": "مُحسّن لأنظمة تتبع المتقدمين"
+      }
+    }
+  },
+  "viewer": {
+    "back": "Retour à l'Éditeur",
+    "download": "Télécharger PDF"
+  },
+  "payment": {
+    "title": "Télécharger le CV PDF",
+    "one_time": "Paiement unique",
+    "pay_now": "Payer et télécharger",
+    "emailAddress": "Adresse mail",
+    "paymentInformation": "Information de paiement",
+    "cardNumber": "Numéro de carte",
+    "securePayment": "Payement sécurisé",
+    "pay": "Payer",
+    "features": {
+      "download_pdf": "Téléchargement PDF haute qualité",
+      "emailSent": "Envoi par mail"
+    },
+    "processing": "Traitement du paiement...",
+    "success": "Paiement réussi !",
+    "error": "Échec du paiement. Veuillez réessayer.",
+    "copyLink": "Copier le lien"
+  },
+  "sidebar": {
+    "templates": "قوالب"
+  },
+  "headerBar":  {
+    "getMyResume": "احصل على سيرتي الذاتية",
+    "goBackToInputs": "العودة إلى المدخلات"
+  }
+} 

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prénom NOM - Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .contact-info p {
+            margin: 2px 0;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title,
+        .degree {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .company,
+        .institution {
+            font-style: italic;
+            color: #666;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .description {
+            margin-top: 8px;
+            text-align: justify;
+        }
+
+        .description ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .description li {
+            margin-bottom: 3px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category h4 {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .language-item {
+            min-width: 120px;
+        }
+
+        .language-name {
+            font-weight: bold;
+        }
+
+        .language-level {
+            color: #666;
+            font-style: italic;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+                font-size: 12pt;
+            }
+            
+            .header h1 {
+                font-size: 18pt;
+            }
+            
+            .section-title {
+                font-size: 14pt;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date {
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Prénom NOM</h1>
+        <h2>Intitulé du poste recherché</h2>
+        <div class="contact-info">
+            <p>📧 prenom.nom@email.com | 📱 +33 6 XX XX XX XX</p>
+            <p>📍 123 Rue de la République, 75001 Paris, France</p>
+            <p>🔗 LinkedIn : linkedin.com/in/prenom-nom | 🌐 Portfolio : www.monsite.com</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <h3 class="section-title">Profil</h3>
+            <p class="description">
+                Professionnel expérimenté avec X années d'expérience dans [votre domaine]. 
+                Passionné par [vos centres d'intérêt professionnels], je cherche à mettre mes compétences 
+                en [compétences clés] au service d'une équipe dynamique pour contribuer à [objectifs].
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Expérience Professionnelle</h3>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="job-title">Titre du Poste</div>
+                        <div class="company">Nom de l'Entreprise, Ville</div>
+                    </div>
+                    <div class="date">Janvier 2020 - Présent</div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Responsabilité principale avec résultat quantifié</li>
+                        <li>Projet majeur mené avec impact mesurable</li>
+                        <li>Compétence technique développée ou utilisée</li>
+                        <li>Achievement remarquable avec chiffres à l'appui</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="job-title">Titre du Poste Précédent</div>
+                        <div class="company">Nom de l'Entreprise, Ville</div>
+                    </div>
+                    <div class="date">Mars 2018 - Décembre 2019</div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Mission principale accomplie</li>
+                        <li>Projet de développement ou d'amélioration</li>
+                        <li>Collaboration inter-équipes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="job-title">Premier Poste</div>
+                        <div class="company">Nom de l'Entreprise, Ville</div>
+                    </div>
+                    <div class="date">Septembre 2016 - Février 2018</div>
+                </div>
+                <div class="description">
+                    <p>Description concise des responsabilités et réalisations principales dans ce poste d'entrée.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Formation</h3>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="degree">Master en [Spécialité]</div>
+                        <div class="institution">Nom de l'École/Université, Ville</div>
+                    </div>
+                    <div class="date">2014 - 2016</div>
+                </div>
+                <div class="description">
+                    <p>Mention obtenue • Spécialisation en [domaine] • Projet de fin d'études sur [sujet]</p>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="degree">Licence en [Spécialité]</div>
+                        <div class="institution">Nom de l'Université, Ville</div>
+                    </div>
+                    <div class="date">2011 - 2014</div>
+                </div>
+                <div class="description">
+                    <p>Formation généraliste avec spécialisation en [domaine]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Compétences</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Techniques</h4>
+                    <p>• Compétence 1<br>
+                    • Compétence 2<br>
+                    • Compétence 3<br>
+                    • Compétence 4</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Outils & Logiciels</h4>
+                    <p>• Microsoft Office Suite<br>
+                    • Adobe Creative Suite<br>
+                    • CRM (Salesforce, HubSpot)<br>
+                    • Outils de gestion de projet</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Management</h4>
+                    <p>• Leadership d'équipe<br>
+                    • Gestion de projet<br>
+                    • Formation et coaching<br>
+                    • Développement commercial</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Langues</h3>
+            <div class="languages">
+                <div class="language-item">
+                    <span class="language-name">Français :</span>
+                    <span class="language-level">Langue maternelle</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Anglais :</span>
+                    <span class="language-level">Courant (C1)</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Espagnol :</span>
+                    <span class="language-level">Intermédiaire (B2)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Centres d'intérêt</h3>
+            <p class="description">
+                Photographie • Voyage • Technologies • Sport (course à pied) • Lecture • 
+                Bénévolat associatif
+            </p>
+        </section>
+    </main>
+</body>
+</html>

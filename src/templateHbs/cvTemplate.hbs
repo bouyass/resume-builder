@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{personalInfo.firstName}} {{personalInfo.lastName}} - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+/* Resume Template CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.cv-container {
+  max-width: 1200px;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100%;
+}
+
+/* SIDEBAR STYLES */
+.sidebar {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 15px 12px;
+  height: 100%;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image i {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-title {
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.sidebar-section {
+  margin-bottom: 18px;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 4px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.contact-item i {
+  width: 16px;
+  margin-right: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.skill-category {
+  margin-bottom: 12px;
+}
+
+.skill-category-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ecf0f1;
+}
+
+.skill-item {
+  margin-bottom: 4px;
+  font-size: 12px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.skill-item:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.skill-item span {
+  font-weight: 500;
+}
+
+.skill-item em {
+  color: #bdc3c7;
+  font-size: 11px;
+}
+
+.hobby-list {
+  list-style: none;
+}
+
+.hobby-list li {
+  margin-bottom: 4px;
+  font-size: 12px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.hobby-list li:before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-size: 12px;
+}
+
+/* MAIN CONTENT STYLES */
+.main-content {
+  padding: 20px 25px;
+  background: white;
+  height: 100%;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ecf0f1;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 3px;
+}
+
+.item-company {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.item-date {
+  font-size: 12px;
+  color: #95a5a6;
+  font-weight: 500;
+  background: #ecf0f1;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.item-description {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.project-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+.project-item:last-child {
+  margin-bottom: 0;
+}
+
+.item-role {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #7f8c8d;
+}
+
+.item-tech {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #7f8c8d;
+}
+
+.item-link {
+  margin-top: 5px;
+}
+
+.item-link a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.item-link a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.award-item {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.award-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.item-issuer {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.item-expiry {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-bottom: 5px;
+}
+
+/* Prevent page breaks inside sections and major items for PDF/print */
+.avoid-break {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  -webkit-column-break-inside: avoid !important;
+  -moz-column-break-inside: avoid !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.page-break {
+  page-break-before: always !important;
+  break-before: page !important;
+  display: block !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .cv-container {
+    height: 100% !important;
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr;
+    height: 100% !important;
+  }
+  
+  .sidebar {
+    padding: 15px 10px;
+    height: 100% !important;
+  }
+  
+  .main-content {
+    padding: 15px 10px;
+    height: 100% !important;
+  }
+  
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-name {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .item-date {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px 8px;
+  }
+  
+  .sidebar {
+    padding: 12px 8px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+  }
+  
+  .item-title {
+    font-size: 14px;
+  }
+  
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+  }
+}
+
+:root {
+  --cv-page-height: {{cvPageHeight}};
+}
+
+/* PRINT STYLES */
+@media print {
+  .cv-container {
+    box-shadow: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white;
+    height: var(--cv-page-height) !important;
+  }
+  
+  .main-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-height: var(--cv-page-height) !important;
+    height: var(--cv-page-height) !important;
+  }
+
+  .sidebar {
+    width: 250px !important;
+    min-height: var(--cv-page-height) !important;
+    height: var(--cv-page-height) !important;
+    background: linear-gradient(135deg, #2c3e50, #3498db) !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .main-content {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-height: var(--cv-page-height) !important;
+  }
+
+  .section-title:after {
+    background: #3498db !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+
+  /* Flexbox override for two-column layout in print */
+  .main-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .sidebar {
+    width: 250px !important;
+    flex-shrink: 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .main-content {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Keep section titles with their content */
+  .section-title {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Ensure sections don't break badly */
+  .project-item
+   {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+      overflow: visible !important;
+    }
+
+  .award-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .timeline-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+  
+  /* Add margin to force breaks before items if needed */
+  .timeline-item:first-child,
+  .project-item:first-child,
+  .award-item:first-child {
+    margin-top: 0 !important;
+  }
+  
+  /* Prevent breaking in item headers */
+  .item-header {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  
+  /* Keep descriptions with their headers */
+  .item-description {
+    orphans: 3 !important;
+    widows: 3 !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+  
+  /* Force minimum height for better detection */
+  .timeline-item {
+    min-height: 60px;
+  }
+  
+  .project-item {
+    min-height: 80px;
+  }
+  
+  .award-item {
+    min-height: 60px;
+  }
+  
+  /* Alternative approach: Add some padding to help with break detection */
+  .timeline-item,
+  .project-item,
+  .award-item {
+    padding-top: 2px;
+    padding-bottom: 4px;
+  }
+  
+  /* Webkit specific fixes */
+  @media print and (-webkit-min-device-pixel-ratio: 0) {
+    .timeline-item,
+    .project-item,
+    .award-item {
+      -webkit-region-break-inside: avoid;
+    }
+  }
+}
+    </style>
+</head>
+<body>
+  <div class="cv-container">
+    <div class="main-grid">
+      <aside class="sidebar">
+        <!-- PROFILE -->
+        <div class="profile-section">
+          <div class="profile-image">
+            {{#if personal.photo}}
+              <img src="{{personal.photo}}" alt="Profile Picture">
+            {{else}}
+              <i class="fas fa-user"></i>
+            {{/if}}
+          </div>
+          <h1 class="profile-name">{{personal.fullName}}</h1>
+          <p class="profile-title">{{personal.title}}</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Contact</h3>
+          <div class="contact-item"><i class="fas fa-envelope"></i> {{personal.email}}</div>
+          <div class="contact-item"><i class="fas fa-phone"></i> {{personal.phone}}</div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i> {{personal.location}}</div>
+          {{#if personal.website}}
+            <div class="contact-item"><i class="fas fa-globe"></i> <a href="{{personal.website}}" target="_blank">{{personal.website}}</a></div>
+          {{/if}}
+          {{#if personal.linkedin}}
+            <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="{{personal.linkedin}}" target="_blank">LinkedIn</a></div>
+          {{/if}}
+          {{#if personal.github}}
+            <div class="contact-item"><i class="fab fa-github"></i> <a href="{{personal.github}}" target="_blank">GitHub</a></div>
+          {{/if}}
+        </div>
+
+        <!-- SKILLS -->
+        {{#if skills.categories.length}}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Compétences</h3>
+          {{#each skills.categories}}
+            <div class="skill-category">
+              <h4 class="skill-category-name">{{name}}</h4>
+              {{#each skills}}
+              <div class="skill-item">
+                <span>{{name}}</span> - <em>{{level}}</em>
+              </div>
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- HOBBIES -->
+        {{#if hobbies.length}}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Centres d'intérêt</h3>
+          <ul class="hobby-list">
+            {{#each hobbies}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/if}}
+      </aside>
+
+      <main class="main-content">
+        <!-- ABOUT -->
+        {{#if personal.about}}
+        <section class="section">
+          <h2 class="section-title">À propos</h2>
+          <p>{{personal.about}}</p>
+        </section>
+        {{/if}}
+
+        <!-- EXPERIENCE -->
+        {{#if experience.length}}
+        <section class="section">
+          <h2 class="section-title">Expérience</h2>
+          {{#each experience}}
+          <div class="timeline-item">
+            <div class="item-header">
+              <div>
+                <h3 class="item-title">{{title}}</h3>
+                <p class="item-company">{{company}}, {{location}}</p>
+              </div>
+              <span class="item-date">{{startDate}} - {{endDate}}</span>
+            </div>
+            <p class="item-description">{{description}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+
+        <!-- EDUCATION -->
+        {{#if education.length}}
+        <section class="section">
+          <h2 class="section-title">Formation</h2>
+          {{#each education}}
+          <div class="timeline-item">
+            <div class="item-header">
+              <div>
+                <h3 class="item-title">{{title}}</h3>
+                <p class="item-company">{{institution}}, {{location}}</p>
+              </div>
+              <span class="item-date">{{startDate}} - {{endDate}}</span>
+            </div>
+            <p class="item-description">{{description}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+
+        <!-- PROJECTS -->
+        {{#if projects.length}}
+        <section class="section">
+          <h2 class="section-title">Projets</h2>
+          {{#each projects}}
+          <div class="project-item">
+            <h3 class="item-title">{{name}}</h3>
+            <p class="item-role"><strong>Rôle :</strong> {{role}}</p>
+            <p class="item-description">{{description}}</p>
+            <p class="item-tech"><strong>Technologies :</strong> {{#each technologies}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+            {{#if url}}<p class="item-link"><a href="{{url}}" target="_blank">{{url}}</a></p>{{/if}}
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+
+        <!-- AWARDS -->
+        {{#if awards.length}}
+        <section class="section">
+          <h2 class="section-title">Récompenses & Certifications</h2>
+          {{#each awards}}
+          <div class="award-item">
+            <h3 class="item-title">{{title}}</h3>
+            <p class="item-issuer">{{issuer}} - {{date}}</p>
+            {{#if expiryDate}}<p class="item-expiry"><strong>Valide jusqu'à :</strong> {{expiryDate}}</p>{{/if}}
+            <p class="item-description">{{description}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+      </main>
+    </div>
+  </div>
+</body>

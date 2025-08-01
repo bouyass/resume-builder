@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Artistique - Maya DUBOIS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ARTISTIC BACKGROUND */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, #ff6b35 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #f7931e 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #c2185b 0%, transparent 50%),
+                radial-gradient(circle at 60% 70%, #7b1fa2 0%, transparent 50%);
+            opacity: 0.3;
+            z-index: -2;
+            animation: backgroundShift 15s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+        }
+
+        /* PAINT SPLASHES */
+        .paint-splash {
+            position: absolute;
+            border-radius: 50%;
+            animation: paintFloat 8s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .paint-splash:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #ff6b35, transparent 70%);
+            animation-delay: 0s;
+        }
+
+        .paint-splash:nth-child(2) {
+            top: 60%;
+            right: 20%;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #c2185b, transparent 70%);
+            animation-delay: 2s;
+        }
+
+        .paint-splash:nth-child(3) {
+            bottom: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #7b1fa2, transparent 70%);
+            animation-delay: 4s;
+        }
+
+        @keyframes paintFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            33% { transform: translateY(-20px) rotate(120deg); opacity: 0.8; }
+            66% { transform: translateY(10px) rotate(240deg); opacity: 0.4; }
+        }
+
+        .cv-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HEADER ARTISTIQUE */
+        .artistic-header {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .artistic-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #c2185b, #7b1fa2);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: headerGlow 6s ease-in-out infinite;
+        }
+
+        @keyframes headerGlow {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        .artist-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #c2185b, #7b1fa2);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 50px rgba(255, 107, 53, 0.5);
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .artist-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .artist-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .artist-quote::before,
+        .artist-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: #ff6b35;
+            position: absolute;
+        }
+
+        .artist-quote::before {
+            top: -20px;
+            left: -30px;
+        }
+
+        .artist-quote::after {
+            bottom: -40px;
+            right: -20px;
+        }
+
+        /* LAYOUT CRÉATIF */
+        .artistic-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr 300px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* SIDEBAR GAUCHE */
+        .left-sidebar {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(194, 24, 91, 0.1));
+            border-radius: 30px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-sidebar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, #ff6b35, transparent);
+            animation: rotate 10s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-artistic {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ff6b35;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #c2185b);
+            border-radius: 2px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b35, #c2185b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .skill-artistic {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-canvas {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-paint {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #c2185b);
+            border-radius: 20px;
+            position: relative;
+            animation: skillPaint 3s ease-out;
+        }
+
+        @keyframes skillPaint {
+            0% { width: 0%; }
+        }
+
+        .skill-paint::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #c2185b);
+            border-radius: 20px;
+            filter: blur(5px);
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* CONTENU PRINCIPAL */
+        .main-canvas {
+            background: linear-gradient(135deg, rgba(123, 31, 162, 0.1), rgba(247, 147, 30, 0.1));
+            border-radius: 30px;
+            padding: 50px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-canvas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #c2185b, transparent 70%);
+            opacity: 0.3;
+            animation: canvasFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes canvasFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, -20px); }
+        }
+
+        .canvas-section {
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .canvas-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #f7931e;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .canvas-title::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #f7931e, transparent);
+            border-radius: 2px;
+        }
+
+        .about-artistic {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            text-align: justify;
+        }
+
+        .experience-artistic {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ff6b35;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-artistic:hover {
+            background: rgba(255, 107, 53, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .exp-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ff6b35;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .exp-date {
+            background: linear-gradient(45deg, #c2185b, #7b1fa2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .exp-description {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR DROITE */
+        .right-sidebar {
+            background: linear-gradient(135deg, rgba(194, 24, 91, 0.1), rgba(123, 31, 162, 0.1));
+            border-radius: 30px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-sidebar::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #7b1fa2, transparent 70%);
+            animation: sidebarPulse 6s ease-in-out infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes sidebarPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-item:hover {
+            background: rgba(194, 24, 91, 0.1);
+            transform: scale(1.05);
+        }
+
+        .portfolio-icon {
+            font-size: 2rem;
+            color: #c2185b;
+            margin-bottom: 15px;
+        }
+
+        .awards-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-icon {
+            color: #f7931e;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .artistic-layout {
+                grid-template-columns: 1fr 2fr;
+            }
+            .right-sidebar {
+                grid-column: 1 / -1;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .artist-name {
+                font-size: 3rem;
+            }
+            
+            .artistic-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .left-sidebar,
+            .main-canvas,
+            .right-sidebar {
+                padding: 30px;
+            }
+            
+            .canvas-title {
+                font-size: 2rem;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            body::before,
+            .paint-splash {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAINT SPLASHES -->
+    <div class="paint-splash"></div>
+    <div class="paint-splash"></div>
+    <div class="paint-splash"></div>
+
+    <div class="cv-container">
+        <!-- HEADER ARTISTIQUE -->
+        <header class="artistic-header">
+            <h1 class="artist-name">Maya DUBOIS</h1>
+            <p class="artist-title">Artiste Visuelle & Designer Créative</p>
+            <p class="artist-quote">L'art n'est pas ce que vous voyez, mais ce que vous faites voir aux autres</p>
+        </header>
+
+        <!-- LAYOUT CRÉATIF -->
+        <div class="artistic-layout">
+            <!-- SIDEBAR GAUCHE -->
+            <aside class="left-sidebar">
+                <section class="contact-artistic">
+                    <h2 class="section-title">Contact</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>maya.dubois@artist.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>+33 6 78 90 12 34</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>Montmartre, Paris</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>@maya.creates</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <span>maya-dubois-art.com</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Expertises</h2>
+                    <div class="skill-artistic">
+                        <div class="skill-name">
+                            <span>Peinture & Dessin</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-canvas">
+                            <div class="skill-paint" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-artistic">
+                        <div class="skill-name">
+                            <span>Design Graphique</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-canvas">
+                            <div class="skill-paint" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-artistic">
+                        <div class="skill-name">
+                            <span>Illustration Digitale</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-canvas">
+                            <div class="skill-paint" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-artistic">
+                        <div class="skill-name">
+                            <span>Sculpture</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-canvas">
+                            <div class="skill-paint" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-artistic">
+                        <div class="skill-name">
+                            <span>Art Numérique</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-canvas">
+                            <div class="skill-paint" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- CONTENU PRINCIPAL -->
+            <main class="main-canvas">
+                <section class="canvas-section">
+                    <h2 class="canvas-title">Vision Artistique</h2>
+                    <p class="about-artistic">
+                        Artiste passionnée depuis plus de 10 ans, je créée des œuvres qui questionnent notre rapport 
+                        au monde contemporain. Mon travail explore l'intersection entre tradition et modernité, 
+                        mélangeant techniques classiques et outils numériques pour créer des expériences visuelles 
+                        uniques. Chaque création raconte une histoire, chaque couleur porte une émotion.
+                    </p>
+                </section>
+
+                <section class="canvas-section">
+                    <h2 class="canvas-title">Parcours Créatif</h2>
+                    
+                    <div class="experience-artistic">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Artiste Indépendante</h3>
+                                <p class="exp-company">Studio Maya Creates</p>
+                            </div>
+                            <span class="exp-date">2020 - Présent</span>
+                        </div>
+                        <p class="exp-description">
+                            Création d'œuvres originales pour galeries et collectionneurs privés. 
+                            Spécialisée dans l'art contemporain mêlant peinture traditionnelle et éléments numériques. 
+                            15 expositions individuelles, plus de 80 œuvres vendues internationalement.
+                        </p>
+                    </div>
+
+                    <div class="experience-artistic">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Directrice Artistique</h3>
+                                <p class="exp-company">Agence Créative Spectrum</p>
+                            </div>
+                            <span class="exp-date">2018 - 2020</span>
+                        </div>
+                        <p class="exp-description">
+                            Direction créative pour des campagnes publicitaires innovantes. Conception d'identités 
+                            visuelles pour des marques de luxe. Encadrement d'une équipe de 6 designers et illustrateurs.
+                        </p>
+                    </div>
+
+                    <div class="experience-artistic">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Illustratrice Senior</h3>
+                                <p class="exp-company">Maison d'Édition Lumière</p>
+                            </div>
+                            <span class="exp-date">2015 - 2018</span>
+                        </div>
+                        <p class="exp-description">
+                            Création d'illustrations pour romans et recueils de poésie. Développement d'un style 
+                            signature reconnu dans le milieu éditorial. Plus de 25 ouvrages illustrés.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="canvas-section">
+                    <h2 class="canvas-title">Formation</h2>
+                    
+                    <div class="experience-artistic">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Master Arts Visuels</h3>
+                                <p class="exp-company">École Nationale Supérieure des Beaux-Arts</p>
+                            </div>
+                            <span class="exp-date">2013 - 2015</span>
+                        </div>
+                        <p class="exp-description">
+                            Spécialisation en art contemporain et nouvelles technologies. 
+                            Mention Très Bien. Projet de fin d'études primé.
+                        </p>
+                    </div>
+
+                    <div class="experience-artistic">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Licence Arts Plastiques</h3>
+                                <p class="exp-company">Université Paris 1 Panthéon-Sorbonne</p>
+                            </div>
+                            <span class="exp-date">2010 - 2013</span>
+                        </div>
+                        <p class="exp-description">
+                            Formation complète en histoire de l'art, techniques traditionnelles et contemporaines.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <!-- SIDEBAR DROITE -->
+            <aside class="right-sidebar">
+                <section>
+                    <h2 class="section-title">Portfolio</h2>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Série "Métamorphoses"</h4>
+                        <p>Collection de 12 toiles</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h4>Installation "Lumières"</h4>
+                        <p>Art numérique interactif</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>"Contes Modernes"</h4>
+                        <p>Illustrations éditoriales</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Distinctions</h2>
+                    <div class="awards-item">
+                        <i class="fas fa-trophy award-icon"></i>
+                        <div>
+                            <strong>Prix Jeune Talent</strong><br>
+                            <small>Salon d'Automne 2023</small>
+                        </div>
+                    </div>
+                    <div class="awards-item">
+                        <i class="fas fa-medal award-icon"></i>
+                        <div>
+                            <strong>Mention Spéciale</strong><br>
+                            <small>Biennale d'Art Contemporain</small>
+                        </div>
+                    </div>
+                    <div class="awards-item">
+                        <i class="fas fa-star award-icon"></i>
+                        <div>
+                            <strong>Artist Rising</strong><br>
+                            <small>Magazine Art & Création</small>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Expositions</h2>
+                    <div class="awards-item">
+                        <i class="fas fa-eye award-icon"></i>
+                        <div>
+                            <strong>Galerie Moderne</strong><br>
+                            <small>Paris, 2024</small>
+                        </div>
+                    </div>
+                    <div class="awards-item">
+                        <i class="fas fa-palette award-icon"></i>
+                        <div>
+                            <strong>Art Basel</strong><br>
+                            <small>Suisse, 2023</small>
+                        </div>
+                    </div>
+                    <div class="awards-item">
+                        <i class="fas fa-brush award-icon"></i>
+                        <div>
+                            <strong>FIAC</strong><br>
+                            <small>Grand Palais, 2022</small>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
