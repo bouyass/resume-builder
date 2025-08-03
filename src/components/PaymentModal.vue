@@ -92,7 +92,7 @@ declare global {
 const { t, locale } = useI18n()
 
 
-const BACKEND_URL = import.meta.env.DOWNLOAD_SERVER_URL || 'http://localhost:3000'
+const BACKEND_URL = import.meta.env.VITE_DOWNLOAD_SERVER_URL || 'http://localhost:3000'
 const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
 
 const api = axios.create({
@@ -253,7 +253,7 @@ function cleanupStripeElements() {
 
 async function processPayment() {
   if (!email.value || !cardComplete.value || !stripe || !cardElement) return
-  
+  debugger;
   processing.value = true
   cardError.value = ''
   
