@@ -91,8 +91,8 @@ declare global {
 
 const { t, locale } = useI18n()
 
-// Configuration backend avec axios
-const BACKEND_URL = 'http://localhost:3001'
+
+const BACKEND_URL = import.meta.env.DOWNLOAD_SERVER_URL || 'http://localhost:3000'
 const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
 
 const api = axios.create({
