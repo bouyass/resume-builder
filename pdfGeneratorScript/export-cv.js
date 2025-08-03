@@ -8,7 +8,11 @@ import cors from 'cors'
 import stripe from 'stripe'
 import path from 'path';
 import fs from 'fs';
+import dotenv from 'dotenv'
 
+dotenv.config()
+
+console.log(process.env.STRIPE_SECRET_KEY)
 const _stripe = stripe(process.env.STRIPE_SECRET_KEY);
 
 const RESUME_DIR = path.join(process.cwd(), 'resumes');
@@ -27,7 +31,7 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
   let event;
 
   try {
-    event = _stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = _stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_SECRET_KEY);
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
@@ -127,7 +131,7 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
   let event;
 
   try {
-    event = _stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = _stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_SECRET_KEY);
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
