@@ -61,7 +61,9 @@
           "startDate": "Fecha de Inicio",
           "endDate": "Fecha de Fin",
           "current": "Cargo Actual",
-          "description": "Descripción"
+          "description": "Descripción",
+          "location": "Ubicación",
+          "addExperience": "Agregar Experiencia"
         },
         "placeholders": {
           "company": "Nombre de la empresa",
@@ -73,6 +75,8 @@
         "title": "Habilidades",
         "description": "Lista tus habilidades por categoría. Activa los niveles si es necesario.",
         "show_levels": "Mostrar niveles",
+        "add_skill_category": "Agregar una Categoría de Habilidades",
+        "add_skill": "Agregar una Habilidad",
         "levels": {
           "beginner": "Principiante",
           "intermediate": "Intermedio",
@@ -81,7 +85,7 @@
         },
         "placeholders": {
           "name": "Nombre de la habilidad",
-          "category": "ej: Lenguajes de Programación"
+          "category": "Nombre de la categoría ej: Lenguajes de Programación"
         }
       },
       "education": {
@@ -91,7 +95,10 @@
           "institution": "Institución",
           "degree": "Título",
           "gpa": "Promedio/Nota",
-          "description": "Descripción"
+          "description": "Descripción",
+          "startDate": "Fecha de Inicio",
+          "endDate": "Fecha de Fin",
+          "addEducation": "Agregar Educación"
         },
         "placeholders": {
           "institution": "Nombre de la universidad/escuela",
@@ -103,6 +110,8 @@
       "projects": {
         "title": "Proyectos",
         "description": "Muestra tus proyectos destacados y logros.",
+        "project": "Proyecto",
+        "addProject": "Agregar Proyecto",
         "fields": {
           "name": "Nombre del Proyecto",
           "role": "Rol",
@@ -121,6 +130,9 @@
       "awards": {
         "title": "Premios y Certificaciones",
         "description": "Añade tus logros, certificaciones y reconocimientos.",
+        "addAward": "Agregar un Premio",
+        "award": "Premio",
+         "addAwardCertification": "Agregar premio & certificación",
         "fields": {
           "title": "Título",
           "issuer": "Organización",
@@ -202,7 +214,17 @@
       "title": "Crea tu CV Perfecto con IA",
       "subtitle": "Transforma tu trayectoria profesional con nuestro creador de CV impulsado por IA. Profesional, personalizado y listo en minutos.",
       "get_started": "Empezar Gratis",
-      "learn_more": "Saber Más"
+      "learn_more": "Saber Más",
+      "creaatedResume": "CV Creados",
+      "timeSaved": "Horas Ahorradas",
+      "userRating": "Valoración de Usuarios",
+      "readyInFiveMinutes": "Listo en 5 minutos",
+      "fromZeroToHired": "De Cero a Contratado en 5 Minutos",
+      "chooseTemplate": "Elegir Plantilla",
+      "fillContent": "Rellenar Contenido",
+      "downloadResume": "Descargar CV",
+      "seconds": "segundos",
+      "minutes": "minutos"
     },
     "features": {
       "ai": {
@@ -215,7 +237,8 @@
       },
       "ats": {
         "title": "Compatible con ATS",
-        "description": "Optimizado para sistemas de seguimiento de candidatos"
+        "description": "Optimizado para sistemas de seguimiento de candidatos",
+        "highlight": "98% de éxito"
       }
     }
   },
@@ -248,5 +271,15 @@
   "headerBar": {
     "getMyResume": "Obtener mi CV",
     "goBackToInputs": "Volver a los datos"
+  },
+  "footer":{
+    "quickLinks": "Enlaces Rápidos",
+    "resources": "Recursos",
+    "contactUs": "Contáctanos",
+    "resumeTips": "Consejos para el CV",
+    "jobSearch": "Búsqueda de Empleo",
+    "careerAdvice": "Consejos de Carrera",
+    "description": "Creando currículos profesionales con inteligencia artificial",
+    "copyright": "© {year} AI Resume Builder. Todos los derechos reservados."
   }
 } 

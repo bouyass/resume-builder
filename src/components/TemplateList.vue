@@ -67,8 +67,13 @@ import ResumeDisplayer from './ResumeDisplayer.vue'
 import PaymentModal from './PaymentModal.vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
+import { useResumeStore } from '../stores/resumeStore'
 
 const router = useRouter()
+
+const { getIsResumeDownloadable } = useResumeStore()
+
+
 // Selected template state
 const selectedTemplate = ref('classic')
 const refreshKey = ref(0)
@@ -176,6 +181,20 @@ function handlePaymentError(errorMessage: string) {
 }
 
 const downloadResume = (): void => {
+  if(getIsResumeDownloadable()) {
+    toast.error(t('resume.errors.fix_errors'), {
+      timeout: 4000,
+      position: POSITION.TOP_RIGHT,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      draggablePercent: 0.6,
+      showCloseButtonOnHover: false,
+      hideProgressBar: false,
+      icon: "✅"
+    })
+    return
+  }
   showPaymentModal.value = true
 }
 

@@ -38,6 +38,7 @@ const loadFromLocalStorage = (): Resume => {
 }
 
 const resumeRef = ref<Resume>(loadFromLocalStorage())
+const isResumeDownloadable = ref<boolean>(false);
 
 
 function saveToLocalStorage(data: Resume) {
@@ -73,12 +74,20 @@ export function useResumeStore() {
     localStorage.removeItem(STORAGE_KEY)
   }
 
+  const setIsResumeDownloadable = (value: boolean): void => {
+    isResumeDownloadable.value = value
+  }
+
+  const getIsResumeDownloadable = (): boolean => {return isResumeDownloadable.value}
+
   return {
     setResume,
     getResume,
     removeResumeFromLocalStorage,
     updatePartialResume,
-    resetResume
+    resetResume,
+    getIsResumeDownloadable,
+    setIsResumeDownloadable
   }
 
 }

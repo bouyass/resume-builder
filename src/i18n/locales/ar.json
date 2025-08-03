@@ -18,6 +18,8 @@
         "title": "المهارات",
         "description": "أدرج مهاراتك حسب الفئة. فعّل المستويات إذا لزم الأمر.",
         "show_levels": "إظهار المستويات",
+        "add_skill_category": "اضافة فئة للمهارات",
+        "add_skill": "اضافة مهارة",
         "levels": {
           "beginner": "مبتدئ",
           "intermediate": "متوسط",
@@ -26,7 +28,7 @@
         },
         "placeholders": {
           "name": "اسم المهارة",
-          "category": "مثال: لغات البرمجة"
+          "category": " اسم الفئة مثال: لغات البرمجة"
         }
       },
       "education": {
@@ -36,7 +38,10 @@
           "institution": "المؤسسة التعليمية",
           "degree": "الشهادة",
           "gpa": "المعدل/الدرجة",
-          "description": "الوصف"
+          "description": "الوصف",
+          "startDate": "تاريخ البدء",
+          "endDate": "تاريخ النهاية",
+          "addEducation": "اضافة التعليم"
         },
         "placeholders": {
           "institution": "اسم الجامعة/المدرسة",
@@ -48,6 +53,8 @@
       "projects": {
         "title": "المشاريع",
         "description": "اعرض مشاريعك البارزة وإنجازاتك.",
+        "project": "مشروع",
+        "addProject": "اضافة مشروع",
         "fields": {
           "name": "اسم المشروع",
           "role": "الدور",
@@ -66,6 +73,9 @@
       "awards": {
         "title": "الجوائز والشهادات",
         "description": "أضف إنجازاتك وشهاداتك والتقدير الذي حصلت عليه.",
+        "addAward": "اضافة جواز",
+        "award": "جواز",
+         "addAwardCertification": " اضافة جواز وشهادة",
         "fields": {
           "title": "العنوان",
           "issuer": "الجهة المانحة",
@@ -134,7 +144,9 @@
           "startDate": "تاريخ البدء",
           "endDate": "تاريخ الانتهاء",
           "current": "الوظيفة الحالية",
-          "description": "الوصف"
+          "description": "الوصف",
+          "location": "الموقع",
+          "addExperience": "اضافة خبرة"
         },
         "placeholders": {
           "company": "اسم الشركة",
@@ -178,7 +190,17 @@
       "title": "أنشئ سيرتك الذاتية المثالية بالذكاء الاصطناعي",
       "subtitle": "حوّل مسيرتك المهنية مع منشئ السيرة الذاتية المدعوم بالذكاء الاصطناعي. احترافي، مخصص، وجاهز في دقائق.",
       "get_started": "ابدأ مجاناً",
-      "learn_more": "اعرف المزيد"
+      "learn_more": "اعرف المزيد",
+      "createdResume": "Resumes Created",
+      "timeSaved": "Hours Saved",
+      "userRating": "User Rating",
+      "readyInFiveMinutes": "Ready in 5 minutes",
+      "fromZeroToHired": "From Zero to Hired in 5 Minutes",
+      "chooseTemplate": "Choose Template",
+      "fillContent": "Fill Content",
+      "downloadResume": "Download Resume",
+      "seconds": "seconds",
+      "minutes": "minutes"
     },
     "features": {
       "ai": {
@@ -191,7 +213,8 @@
       },
       "ats": {
         "title": "متوافق مع ATS",
-        "description": "مُحسّن لأنظمة تتبع المتقدمين"
+        "description": "مُحسّن لأنظمة تتبع المتقدمين",
+        "highlight": "98% نجاح"
       }
     }
   },
@@ -223,5 +246,15 @@
   "headerBar":  {
     "getMyResume": "احصل على سيرتي الذاتية",
     "goBackToInputs": "العودة إلى المدخلات"
+  },
+  "footer":{
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "contactUs": "Contact Us",
+    "resumeTips": "Resume Tips",
+    "jobSearch": "Job Search",
+    "careerAdvice": "Career Advice",
+    "description": "Creating professional resumes with artificial intelligence",
+     "copyright": "© {year} AI Resume Builder. All rights reserved."
   }
 } 

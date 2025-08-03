@@ -18,6 +18,8 @@
         "title": "Compétences",
         "description": "Listez vos compétences par catégorie. Activez les niveaux si nécessaire.",
         "show_levels": "Afficher les niveaux",
+        "add_skill_category": "Ajouter une Catégorie de Competences",
+        "add_skill": "Ajouter une Competence",
         "levels": {
           "beginner": "Débutant",
           "intermediate": "Intermédiaire",
@@ -26,7 +28,7 @@
         },
         "placeholders": {
           "name": "Nom de la compétence",
-          "category": "ex: Langages de Programmation"
+          "category": "Nom de la catégorie ex: Langages de Programmation"
         }
       },
       "education": {
@@ -36,7 +38,10 @@
           "institution": "Établissement",
           "degree": "Diplôme",
           "gpa": "Moyenne/Note",
-          "description": "Description"
+          "description": "Description",
+          "startDate": "Date de Démarrage",
+          "endDate": "Date de Fin",
+          "addEducation": "Ajouter une Formation"
         },
         "placeholders": {
           "institution": "Nom de l'université/école",
@@ -48,6 +53,8 @@
       "projects": {
         "title": "Projets",
         "description": "Présentez vos projets notables et réalisations.",
+        "project": "Projet",
+        "addProject": "Ajouter un Projet",
         "fields": {
           "name": "Nom du Projet",
           "role": "Rôle",
@@ -66,6 +73,9 @@
       "awards": {
         "title": "Prix & Certifications",
         "description": "Ajoutez vos récompenses, certifications et reconnaissances.",
+        "addAward": "Ajouter un Prix",
+        "award": "Prix",
+         "addAwardCertification": "Ajouter un prix & une certification",
         "fields": {
           "title": "Titre",
           "issuer": "Organisme",
@@ -143,7 +153,9 @@
           "startDate": "Date de Début",
           "endDate": "Date de Fin",
           "current": "Poste Actuel",
-          "description": "Description"
+          "description": "Description",
+          "location": "Localisation",
+          "addExperience": "Ajouter une Expérience"
         },
         "placeholders": {
           "company": "Nom de l'entreprise",
@@ -181,13 +193,23 @@
     }
   },
   "landing": {
-    "logo": "AI Resume",
+    "logo": "AI Resume Builder",
     "create_resume": "Créer un CV",
     "hero": {
       "title": "Créez Votre CV Parfait avec l'IA",
       "subtitle": "Transformez votre parcours professionnel avec notre créateur de CV alimenté par l'IA. Professionnel, personnalisé et prêt en quelques minutes.",
       "get_started": "Commencer Gratuitement",
-      "learn_more": "En Savoir Plus"
+      "learn_more": "En Savoir Plus",
+      "createdResume": "CV Créés",
+      "timeSaved": "Heures Économisées",
+      "userRating": "Note des Utilisateurs",
+      "readyInFiveMinutes": "Prêt en 5 minutes",
+      "fromZeroToHired": "De Zéro à Embauché en 5 Minutes",
+      "chooseTemplate": "Choisir un Modèle",
+      "fillContent": "Remplir le CV",
+      "downloadResume": "Télécharger le CV",
+      "seconds": "secondes",
+      "minutes": "minutes"
     },
     "features": {
       "ai": {
@@ -200,7 +222,8 @@
       },
       "ats": {
         "title": "Compatible ATS",
-        "description": "Optimisé pour les systèmes de suivi des candidatures"
+        "description": "Optimisé pour les systèmes de suivi des candidatures",
+        "highlight": "98% de succès"
       }
     }
   },
@@ -301,6 +324,11 @@
       "download_pdf": "Téléchargement PDF haute qualité",
       "emailSent": "Envoi par mail"
     },
+    "errors": {
+      "paymentNonValidated": "Le paiement n'a pas été validé",
+      "paymentFailed": "Le paiement n'a pas abouti",
+      "paymentError": "Erreur de paiement"
+    },
     "copyLink": "Copier le lien",
     "processing": "Traitement du paiement...",
     "success": "Paiement réussi !",
@@ -312,6 +340,16 @@
   "headerBar": {
     "getMyResume": "Obtenir mon CV",
     "goBackToInputs": "Retour à la saisie"
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "resources": "Ressources",
+    "contactUs": "Contactez-nous",
+    "resumeTips": "Conseils pour le CV",
+    "jobSearch": "Recherche d'Emploi",
+    "careerAdvice": "Conseils de Carrière",
+    "description": "Création de CV professionnels avec intelligence artificielle",
+    "copyright": "© {year} AI Resume Builder. Tous droits réservés."
   }
 
 } 

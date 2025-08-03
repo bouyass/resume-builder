@@ -3,7 +3,7 @@
     <!-- Modern Side Navigation -->
     <nav class="side-nav"> 
       <div class="nav-header">
-        <h1 class="nav-title"> Resume builder </h1>
+        <h1 class="nav-title"> AI Resume builder </h1>
         <div class="progress-indicator">
           {{ t('resume.navigation.progress', { completed: completedSections, total: sections.length }) }}
           <div class="progress-bar">
@@ -48,8 +48,8 @@
       <div class="nav-actions">
         <button 
         class="preview-button"
-        @click="handlePreview"
-        :disabled="hasErrors === false"
+        @click="() => router.push('/templateList')"
+        :disabled="false"
       >
         <span class="button-icon" v-html="EyeIcon"></span>
         {{ t('resume.buttons.preview') }}
@@ -327,9 +327,9 @@
         <div v-show="currentSection === 'experience'" class="form-section" key="experience">
           <div class="section-header">
             <h2 :class="{ completed: isSectionCompleted('experience') }">
-              Work Experience
+              {{ t('resume.sections.experience.title')  }}
             </h2>
-            <p class="section-description">Add your professional experience and achievements.</p>
+            <p class="section-description"> {{ t('resume.sections.experience.description') }} </p>
           </div>
           <div class="entries-container">
             <div 
@@ -338,14 +338,14 @@
               class="experience-entry"
             >
               <div class="entry-header">
-                <h3>Experience #{{ index + 1 }}</h3>
+                <h3>{{ t('resume.navigation.sections.experience') }} #{{ index + 1 }}</h3>
                 <button @click="removeExperience(index)" class="remove-button">
                   🗑️
                 </button>
               </div>
               <div class="input-grid">
                 <div class="input-group">
-                  <label>Company</label>
+                  <label> {{ t('resume.sections.experience.fields.company') }} </label>
                   <input 
                     v-model="exp.company" 
                     type="text" 
@@ -388,7 +388,7 @@
                   </span>
                 </div>
                 <div class="input-group">
-                  <label>Location</label>
+                  <label> {{ t('resume.sections.experience.fields.location') }} </label>
                   <input 
                     v-model="exp.company" 
                     type="text" 
@@ -396,7 +396,7 @@
                   >
                 </div>
                 <div class="input-group col-span-4">
-                  <label>Description</label>
+                  <label> {{ t('resume.sections.experience.fields.description') }} </label>
                   <textarea 
                     v-model="exp.description" 
                     :placeholder="t('resume.sections.experience.placeholders.description')"
@@ -408,7 +408,7 @@
           </div>
           <div class="add-button-container">
             <button @click="addExperience" class="add-button">
-              + Add Experience
+              + {{ t('resume.sections.experience.fields.addExperience') }}
             </button>
           </div>
         </div>
@@ -417,19 +417,19 @@
         <div v-show="currentSection === 'education'" class="form-section" key="education">
           <div class="section-header">
             <h2 :class="{ completed: isSectionCompleted('education') }">
-              Education
+              {{ t('resume.sections.education.title') }}
             </h2>
-            <p class="section-description">Add your academic background and qualifications.</p>
+            <p class="section-description"> {{ t('resume.sections.education.description') }}</p>
           </div>
           <div class="entries-container">
             <div v-for="(edu, index) in formData.education" :key="index" class="education-entry">
               <div class="entry-header">
-                <h3>Education #{{ index + 1 }}</h3>
+                <h3>{{ t('resume.sections.education.title') }} #{{ index + 1 }}</h3>
                 <button @click="removeEducation(index)" class="remove-button">🗑️</button>
               </div>
               <div class="input-grid">
                 <div class="input-group col-span-2">
-                  <label>Institution</label>
+                  <label> {{ t('resume.sections.education.fields.institution') }} </label>
                   <input 
                     v-model="edu.institution" 
                     type="text" 
@@ -441,7 +441,7 @@
                   </span>
                 </div>
                 <div class="input-group col-span">
-                  <label>Degree/Certificate</label>
+                  <label> {{ t('resume.sections.education.fields.degree') }} </label>
                   <input 
                     v-model="edu.degree" 
                     type="text" 
@@ -453,7 +453,7 @@
                   </span>
                 </div>
                 <div class="input-group col-span">
-                  <label>Location</label>
+                  <label> {{ t('resume.sections.education.fields.location') }} </label>
                   <input 
                     v-model="edu.degree" 
                     type="text" 
@@ -465,7 +465,7 @@
                   </span>
                 </div>
                 <div class="input-group">
-                  <label>Start Date</label>
+                  <label> {{ t('resume.sections.education.fields.startDate') }} </label>
                   <input 
                     v-model="edu.startDate" 
                     type="date"
@@ -476,7 +476,7 @@
                   </span>
                 </div>
                 <div class="input-group">
-                  <label>End Date</label>
+                  <label> {{ t('resume.sections.education.fields.endDate') }} </label>
                   <input 
                     v-model="edu.endDate" 
                     type="date"
@@ -487,10 +487,10 @@
                   </span>
                 </div>
                 <div class="input-group col-span-4">
-                  <label>Description</label>
+                  <label> {{ t('resume.sections.education.fields.description') }} </label>
                   <textarea 
                     v-model="edu.description" 
-                    placeholder="Notable achievements, relevant coursework, etc."
+                    :placeholder="t('resume.sections.education.placeholders.description')"
                     rows="2"
                     maxlength="150"
                   ></textarea>
@@ -506,8 +506,8 @@
         <!-- Skills Section -->
         <div v-show="currentSection === 'skills'" class="form-section" key="skills">
           <div class="section-header">
-            <h2>Skills</h2>
-            <p class="section-description">List your skills by category. Toggle level indicators if needed.</p>
+            <h2> {{ t('resume.sections.skills.title') }} </h2>
+            <p class="section-description"> {{ t('resume.sections.skills.description') }}</p>
           </div>
 
           <div class="skills-container">
@@ -517,7 +517,7 @@
                   <input 
                     v-model="category.name" 
                     type="text" 
-                    placeholder="Category name (e.g., Programming Languages)"
+                    :placeholder="t('resume.sections.skills.placeholders.category')"
                     class="category-name"
                   >
                   <div class="category-controls">
@@ -527,7 +527,7 @@
                         v-model="category.withLevel"
                         class="toggle-input"
                       >
-                      <span class="toggle-text">Show Levels</span>
+                      <span class="toggle-text"> {{ t('resume.sections.skills.show_levels') }} </span>
                     </label>
                     <button @click="removeSkillCategory(index)" class="remove-button">🗑️</button>
                   </div>
@@ -540,23 +540,23 @@
                     <input 
                       v-model="skill.name" 
                       type="text" 
-                      placeholder="Skill name"
+                      :placeholder="t('resume.sections.skills.placeholders.name')"
                     >
                   </div>
                   <div v-if="category.withLevel" class="input-group level-select">
                     <select v-model="skill.level">
-                      <option value="beginner">Beginner</option>
-                      <option value="intermediate">Intermediate</option>
-                      <option value="advanced">Advanced</option>
-                      <option value="expert">Expert</option>
+                      <option value="beginner">{{ t('resume.sections.skills.levels.beginner') }}</option>
+                      <option value="intermediate"> {{ t('resume.sections.skills.levels.intermediate') }} </option>
+                      <option value="advanced"> {{ t('resume.sections.skills.levels.advanced') }} </option>
+                      <option value="expert"> {{ t('resume.sections.skills.levels.expert') }} </option>
                     </select>
                   </div>
                   <button @click="removeSkill(index, skillIndex)" class="remove-skill">×</button>
                 </div>
-                <button @click="addSkill(index)" class="add-skill">+ Add Skill</button>
+                <button @click="addSkill(index)" class="add-skill">+ {{ t('resume.sections.skills.add_skill') }} </button>
               </div>
             </div>
-            <button @click="addSkillCategory" class="add-button">+ Add Skill Category</button>
+            <button @click="addSkillCategory" class="add-button">+ {{ t('resume.sections.skills.add_skill_category') }}</button>
           </div>
         </div>
 
@@ -564,20 +564,20 @@
         <div v-show="currentSection === 'projects'" class="form-section" key="projects">
           <div class="section-header">
             <h2 :class="{ completed: isSectionCompleted('projects') }">
-              Projects
+              {{ t('resume.sections.projects.title') }}
             </h2>
-            <p class="section-description">Showcase your notable projects and achievements.</p>
+            <p class="section-description"> {{ t('resume.sections.projects.description') }} </p>
           </div>
           <div class="entries-container">
             <div v-for="(project, index) in formData.projects" :key="index" class="project-entry">
               <div class="entry-header">
-                <h3>Project #{{ index + 1 }}</h3>
+                <h3> {{ t('resume.sections.projects.project') }}  #{{ index + 1 }}</h3>
                 <button @click="removeProject(index)" class="remove-button">🗑️</button>
               </div>
               
               <div class="input-grid">
                 <div class="input-group col-span-2">
-                  <label>Project Name</label>
+                  <label> {{ t('resume.sections.projects.fields.name') }} </label>
                   <input 
                     v-model="project.title" 
                     type="text" 
@@ -590,7 +590,7 @@
                 </div>
                 
                 <div class="input-group col-span-2">
-                  <label>Role</label>
+                  <label> {{ t('resume.sections.projects.fields.role') }} </label>
                   <input 
                     v-model="project.role" 
                     type="text" 
@@ -603,12 +603,12 @@
                 </div>
                 
                 <div class="input-group col-span-2">
-                  <label>Project URL</label>
+                  <label> {{ t('resume.sections.projects.fields.url') }} </label>
                   <input v-model="project.url" type="url" placeholder="Link to project/repository">
                 </div>
                 
                 <div class="input-group col-span-2">
-                  <label>Technologies Used</label>
+                  <label> {{ t('resume.sections.projects.fields.technologies') }} </label>
                   <input 
                     v-model="project.technologies" 
                     type="text" 
@@ -617,10 +617,10 @@
                 </div>
                 
                 <div class="input-group col-span-4">
-                  <label>Description</label>
+                  <label> {{ t('resume.sections.projects.fields.description') }} </label>
                   <textarea 
                     v-model="project.description" 
-                    placeholder="Describe the project, your role, and key achievements..."
+                    :placeholder="t('resume.sections.projects.placeholders.description')"
                     rows="4"
                   ></textarea>
                 </div>
@@ -628,7 +628,7 @@
             </div>
           </div>
           <div class="add-button-container">
-            <button @click="addProject" class="add-button">+ Add Project</button>
+            <button @click="addProject" class="add-button">+ {{ t('resume.sections.projects.addProject') }}  </button>
           </div>
         </div>
 
@@ -636,20 +636,20 @@
         <div v-show="currentSection === 'awards'" class="form-section" key="awards">
           <div class="section-header">
             <h2 :class="{ completed: isSectionCompleted('awards') }">
-              Awards & Certifications
+              {{ t('resume.sections.awards.title') }}
             </h2>
-            <p class="section-description">Add your achievements, certifications, and recognition.</p>
+            <p class="section-description"> {{ t('resume.sections.awards.description') }} </p>
           </div>
           
           <div v-for="(award, index) in formData.awards" :key="index" class="award-entry">
             <div class="entry-header">
-              <h3>Award #{{ index + 1 }}</h3>
+              <h3> {{ t('resume.sections.awards.award') }} #{{ index + 1 }}</h3>
               <button @click="removeAward(index)" class="remove-button">🗑️</button>
             </div>
             
             <div class="input-grid">
               <div class="input-group col-span-2">
-                <label>Title</label>
+                <label> {{ t('resume.sections.awards.fields.title') }} </label>
                 <input 
                   v-model="award.title" 
                   type="text" 
@@ -662,7 +662,7 @@
               </div>
               
               <div class="input-group col-span-2">
-                <label>Issuing Organization</label>
+                <label>  {{ t('resume.sections.awards.fields.issuer') }} </label>
                 <input 
                   v-model="award.issuer" 
                   type="text" 
@@ -675,7 +675,7 @@
               </div>
               
               <div class="input-group">
-                <label>Date Received</label>
+                <label> {{ t('resume.sections.awards.fields.date') }} </label>
                 <input 
                   v-model="award.date" 
                   type="date"
@@ -687,28 +687,28 @@
               </div>
               
               <div class="input-group">
-                <label>Expiry Date (Optional)</label>
+                <label> {{ t('resume.sections.awards.fields.expiryDate') }} </label>
                 <input v-model="award.expiryDate" type="date">
               </div>
               
               <div class="input-group col-span-4">
-                <label>Description</label>
+                <label> {{ t('resume.sections.awards.fields.description') }} </label>
                 <textarea 
                   v-model="award.description" 
-                  placeholder="Brief description of the award/certification..."
+                  :placeholder="t('resume.sections.awards.placeholders.description')"
                   rows="3"
                 ></textarea>
               </div>
             </div>
           </div>
-          <button @click="addAward" class="add-button">+ Add Award/Certification</button>
+          <button @click="addAward" class="add-button">+ {{ t('resume.sections.awards.addAwardCertification') }}</button>
         </div>
 
         <!-- Hobbies Section -->
         <div v-show="currentSection === 'hobbies'" class="form-section" key="hobbies">
           <div class="section-header">
-            <h2>Hobbies & Interests</h2>
-            <p class="section-description">Share your interests and activities outside of work.</p>
+            <h2> {{ t('resume.sections.hobbies.title') }} </h2>
+            <p class="section-description"> {{ t('resume.sections.hobbies.description') }} </p>
           </div>
           
           <div class="hobbies-container">
@@ -728,7 +728,7 @@
                 <input 
                   v-model="newHobby" 
                   type="text" 
-                  placeholder="Type a hobby and press Enter"
+                  :placeholder="t('resume.sections.hobbies.placeholders.input')"
                   @keyup.enter="addHobby"
                 >
               </div>
@@ -752,13 +752,12 @@ import { ref, reactive, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'
-import { POSITION } from 'vue-toastification'
 import type { Award, Education, Experience, Project, Resume, SkillCategory } from '../models/resume'
 import PhotoCropModal from './PhotoCropModal.vue'
 import { useResumeStore } from '../stores/resumeStore'
 
 //initialze resume store
-const { getResume, updatePartialResume } = useResumeStore()
+const { getResume, updatePartialResume, setIsResumeDownloadable } = useResumeStore()
 
 
 
@@ -1202,36 +1201,6 @@ watch(() => formData.value.personal, () => {
   validatePersonal()
 }, { deep: true })
 
-/*watch(() => formData.value.awards, () => {
-  sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-  console.log('awards changed')
-}, { deep: true })
-
-
-watch(() => formData.value.education, () => {
-  sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-  console.log('education changed')
-}, { deep: true })
-
-
-watch(() => formData.value.experience, () => {
- sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-}, { deep: true })
-
-
-watch(() => formData.value.hobbies, () => {
-  sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-}, { deep: true })
-
-
-watch(() => formData.value.skills, () => {
-  sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-}, { deep: true })
-
-
-watch(() => formData.value.projects, () => {
- sessionStorage.setItem('resumeData', JSON.stringify(formData.value))
-}, { deep: true })*/
 
 interface ExperienceErrors {
   position: string;
@@ -1438,7 +1407,6 @@ onMounted(() => {
   validateAwards()
 
   formData.value = getResume()
-  console.log('Resume data loaded:', formData.value)
 })
 
 onUnmounted(() => {
@@ -1497,8 +1465,13 @@ const hasErrors = computed(() => {
   return Object.values(sectionErrors).some(errors => errors > 0)
 })
 
+watch(hasErrors, () => {
+  setIsResumeDownloadable(hasErrors.value)
+})
+
 // Handle preview button click
 const handlePreview = () => {
+  console.log('fdsqgf')
   router.push('/templateList')
 }
 </script>
@@ -1682,7 +1655,7 @@ const handlePreview = () => {
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2rem;
-  max-height: calc(100vh - 8rem);
+  max-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
 }
@@ -1988,6 +1961,14 @@ input:focus, textarea:focus {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
+}
+
+  .input-group {
+    width: 100%;
+  }
+
+.add-hobby-form {
+  width: 50%;
 }
 
 .hobby-tags {
