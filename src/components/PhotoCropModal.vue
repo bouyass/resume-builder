@@ -4,7 +4,7 @@
       <h2 class="modal-title">Upload & Crop Photo</h2>
       <div v-if="!imageSelected" class="upload-section">
         <input type="file" accept="image/*" @change="onFileChange" ref="fileInput" class="hidden" />
-        <button class="upload-btn" @click="$refs.fileInput.click()">Choose Photo</button>
+        <button class="upload-btn" @click="triggerFileInput">Choose Photo</button>
       </div>
       <div v-else class="crop-section">
         <vue-cropper
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { ref, watch, defineEmits, defineProps } from 'vue'
+// @ts-ignore
 import VueCropper from 'vue-cropperjs'
 
 const props = defineProps({
@@ -39,6 +40,12 @@ const emit = defineEmits(['close', 'confirm'])
 const imageUrl = ref<string>('')
 const imageSelected = ref(false)
 const cropper = ref<any>(null)
+
+const fileInput = ref<HTMLInputElement | null>(null)
+
+const triggerFileInput = () => {
+  fileInput.value?.click()
+}
 
 const onFileChange = (e: Event) => {
   const file = (e.target as HTMLInputElement).files?.[0]

@@ -63,7 +63,9 @@
 <script setup lang="ts">
 import { ref, onBeforeUnmount, onMounted } from 'vue'
 import { POSITION, useToast } from 'vue-toastification'
+// @ts-ignore
 import ResumeDisplayer from './ResumeDisplayer.vue'
+// @ts-ignore
 import PaymentModal from './PaymentModal.vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
