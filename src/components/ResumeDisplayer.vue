@@ -9,22 +9,17 @@
 </template>
 
 <script setup>
-import { ref, watch, watchEffect, onMounted, nextTick, computed } from 'vue';
+import { ref, watch, onMounted, nextTick, computed } from 'vue';
 import html2pdf from 'html2pdf.js';
 import cvTemplate from '../templateHbs/cvTemplate.hbs?raw';
 import LinkDisplayerModal from './LinkDisplayerModal.vue'
 import axios from 'axios'
 import { useResumeStore } from '../stores/resumeStore'
+import router from '../router';
+import { useToast } from 'vue-toastification';
 
 const { getResume } = useResumeStore()
-
-const cssClasses = computed(() => {
-  let cssClasses = "cv-viewer-iframe-wrapper"
-
-  if(props.isPreview) {
-    cssClasses+= " cv-viewer-iframe-wrapper-isPreview"
-  } 
-})
+const toast = useToast()
 
 // Add props for cvData and isPreview
 const props = defineProps({
@@ -250,8 +245,13 @@ const downloadPdfServer = async () => {
 
       downloadLink.value = res.data.downloadUrl;
       linkText.value = res.data.downloadUrl;
-      showLinkDisplayerModal.value = true
+      toast.info(downloadLink.value, {
+        position: POSITION.BOTTOM_RIGHT,
+      }).then(() => {
+        showLinkDisplayerModal.value = true;
+      });
 
+      router.push('/')
     } catch (err) {
       console.error('Error uploading CV:', err);
     }

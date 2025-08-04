@@ -320,15 +320,18 @@
     "pay": "Payer",
     "features": {
       "download_pdf": "High-quality PDF download",
-      "unlimited_edits": "Unlimited edits and downloads",
+      "extendDownload": "Available for download for 7 days after purchase",
       "emailSent": "Envoi par mail"
     },
     "errors": {
-      "paymentNonValidated": "",
-      "paymentFailed": "Le paiement n'a pas abouti",
-      "paymentError": "Erreur de paiement"
+      "paymentNonValidated": "Payment was not validated",
+      "paymentFailed": "Payment was unsuccessful",
+      "paymentError": "Payment error"
     },
-    "copyLink": "Copy Link"
+    "copyLink": "Copy Link",
+    "copied": "Copied!",
+    "linkCopied": "Link copied to clipboard",
+    "downloadLink": "Download Link"
   },
   "sidebar": {
     "templates": "Templates"

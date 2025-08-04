@@ -1,15 +1,15 @@
 {
   "resume": {
-    "title": "Creador de CV",
+    "title": "Creador de Currículum",
     "navigation": {
       "progress": "{completed}/{total} completados",
       "sections": {
         "personal": "Información",
         "experience": "Experiencia",
         "education": "Educación",
-        "skills": "Habilidades",
+        "skills": "Competencias",
         "projects": "Proyectos",
-        "awards": "Premios",
+        "awards": "Reconocimientos",
         "hobbies": "Pasatiempos"
       }
     },
@@ -23,47 +23,47 @@
             "change": "Cambiar foto",
             "remove": "Eliminar"
           },
-          "fullName": "Nombre Completo",
-          "title": "Título Profesional",
+          "fullName": "Nombre completo",
+          "title": "Título profesional",
           "age": "Edad",
-          "email": "Correo Electrónico",
+          "email": "Correo electrónico",
           "phone": "Teléfono",
           "location": "Ubicación",
-          "about": "Sobre Mí",
-          "website": "Sitio Web",
+          "about": "Sobre mí",
+          "website": "Sitio web",
           "linkedin": "Perfil de LinkedIn",
           "github": "Perfil de GitHub",
-          "about_placeholder": "Breve resumen profesional...",
-          "about_helper": "Escribe 2-4 oraciones sobre tus objetivos profesionales y fortalezas principales",
+          "about_placeholder": "Resumen profesional breve...",
+          "about_helper": "Escribe 2‑4 oraciones sobre tus objetivos profesionales y fortalezas principales",
           "social": {
-            "title": "Redes Sociales"
+            "title": "Redes sociales"
           }
         },
         "placeholders": {
-          "fullName": "Juan García",
+          "fullName": "Juan Pérez",
           "title": "Desarrollador de Software",
           "age": "ej: 25",
-          "email": "juan@ejemplo.es",
+          "email": "juan@ejemplo.com",
           "phone": "+34 612 345 678",
           "location": "Madrid, España",
           "about": "Comparte tu experiencia profesional, objetivos y habilidades clave...",
-          "website": "https://tuportfolio.es",
-          "linkedin": "https://linkedin.com/in/juangarcia",
-          "github": "https://github.com/juangarcia"
+          "website": "https://tuportfolio.com",
+          "linkedin": "https://linkedin.com/in/juanperez",
+          "github": "https://github.com/juanperez"
         }
       },
       "experience": {
         "title": "Experiencia Laboral",
-        "description": "Añade tu experiencia profesional y logros.",
+        "description": "Añade tus experiencias profesionales y logros.",
         "fields": {
           "company": "Empresa",
           "position": "Cargo",
-          "startDate": "Fecha de Inicio",
-          "endDate": "Fecha de Fin",
-          "current": "Cargo Actual",
+          "startDate": "Fecha de inicio",
+          "endDate": "Fecha de fin",
+          "current": "Cargo actual",
           "description": "Descripción",
           "location": "Ubicación",
-          "addExperience": "Agregar Experiencia"
+          "addExperience": "Agregar experiencia"
         },
         "placeholders": {
           "company": "Nombre de la empresa",
@@ -72,11 +72,11 @@
         }
       },
       "skills": {
-        "title": "Habilidades",
-        "description": "Lista tus habilidades por categoría. Activa los niveles si es necesario.",
+        "title": "Competencias",
+        "description": "Lista tus competencias por categoría. Activa los niveles si es necesario.",
         "show_levels": "Mostrar niveles",
-        "add_skill_category": "Agregar una Categoría de Habilidades",
-        "add_skill": "Agregar una Habilidad",
+        "add_skill_category": "Agregar categoría de competencias",
+        "add_skill": "Agregar competencia",
         "levels": {
           "beginner": "Principiante",
           "intermediate": "Intermedio",
@@ -84,26 +84,26 @@
           "expert": "Experto"
         },
         "placeholders": {
-          "name": "Nombre de la habilidad",
-          "category": "Nombre de la categoría ej: Lenguajes de Programación"
+          "name": "Nombre de la competencia",
+          "category": "Categoría ej: Lenguajes de Programación"
         }
       },
       "education": {
         "title": "Educación",
-        "description": "Añade tu formación académica y cualificaciones.",
+        "description": "Añade tu formación académica y calificaciones.",
         "fields": {
           "institution": "Institución",
           "degree": "Título",
-          "gpa": "Promedio/Nota",
+          "gpa": "Promedio / Nota",
           "description": "Descripción",
-          "startDate": "Fecha de Inicio",
-          "endDate": "Fecha de Fin",
-          "addEducation": "Agregar Educación"
+          "startDate": "Fecha de inicio",
+          "endDate": "Fecha de fin",
+          "addEducation": "Agregar formación"
         },
         "placeholders": {
-          "institution": "Nombre de la universidad/escuela",
+          "institution": "Nombre de la universidad / escuela",
           "degree": "ej: Grado en Ingeniería Informática",
-          "gpa": "ej: 8.5/10",
+          "gpa": "ej: 8,5/10",
           "description": "Describe tus logros académicos..."
         }
       },
@@ -111,12 +111,12 @@
         "title": "Proyectos",
         "description": "Muestra tus proyectos destacados y logros.",
         "project": "Proyecto",
-        "addProject": "Agregar Proyecto",
+        "addProject": "Agregar proyecto",
         "fields": {
-          "name": "Nombre del Proyecto",
+          "name": "Nombre del proyecto",
           "role": "Rol",
-          "url": "URL del Proyecto",
-          "technologies": "Tecnologías Utilizadas",
+          "url": "URL del proyecto",
+          "technologies": "Tecnologías utilizadas",
           "description": "Descripción"
         },
         "placeholders": {
@@ -130,14 +130,14 @@
       "awards": {
         "title": "Premios y Certificaciones",
         "description": "Añade tus logros, certificaciones y reconocimientos.",
-        "addAward": "Agregar un Premio",
+        "addAward": "Agregar premio",
         "award": "Premio",
-         "addAwardCertification": "Agregar premio & certificación",
+        "addAwardCertification": "Agregar premio y certificación",
         "fields": {
           "title": "Título",
           "issuer": "Organización",
-          "date": "Fecha de Obtención",
-          "expiryDate": "Fecha de Vencimiento",
+          "date": "Fecha de obtención",
+          "expiryDate": "Fecha de vencimiento",
           "description": "Descripción"
         },
         "placeholders": {
@@ -156,25 +156,25 @@
       }
     },
     "buttons": {
-      "add": "Añadir {item}",
+      "add": "Agregar {item}",
       "remove": "Eliminar",
       "save": "Guardar",
-      "preview": "Vista Previa"
+      "preview": "Vista previa"
     },
     "placeholders": {
-      "fullName": "Juan García",
+      "fullName": "Juan Pérez",
       "title": "Desarrollador de Software",
       "age": "ej: 25",
-      "email": "juan@ejemplo.es",
+      "email": "juan@ejemplo.com",
       "phone": "+34 612 345 678",
       "location": "Madrid, España",
       "company": "Nombre de la empresa",
       "position": "Cargo",
       "description": "Describe tus responsabilidades y logros...",
-      "institution": "Nombre de la universidad/escuela",
+      "institution": "Nombre de la universidad / escuela",
       "degree": "ej: Grado en Ingeniería Informática",
-      "gpa": "ej: 8.5/10",
-      "skill_name": "Nombre de la habilidad",
+      "gpa": "ej: 8,5/10",
+      "skill_name": "Nombre de la competencia",
       "skill_category": "ej: Lenguajes de Programación",
       "project_name": "Título del proyecto",
       "project_role": "Tu rol en el proyecto",
@@ -187,7 +187,7 @@
     },
     "errors": {
       "required_field": "Este campo es obligatorio",
-      "invalid_email": "Por favor, introduce un email válido",
+      "invalid_email": "Por favor, introduce un correo electrónico válido",
       "invalid_phone": "Por favor, introduce un número de teléfono válido",
       "invalid_url": "Por favor, introduce una URL válida",
       "name_too_short": "El nombre debe tener al menos 2 caracteres",
@@ -204,24 +204,24 @@
       "award_title_required": "El título es obligatorio",
       "award_issuer_required": "La organización es obligatoria",
       "award_date_required": "La fecha es obligatoria",
-      "fix_errors": "Por favor, corrija todos los errores antes de continuar"
+      "fix_errors": "Por favor, corrige todos los errores antes de continuar"
     }
   },
   "landing": {
     "logo": "AI Resume",
     "create_resume": "Crear CV",
     "hero": {
-      "title": "Crea tu CV Perfecto con IA",
+      "title": "Crea tu CV perfecto con IA",
       "subtitle": "Transforma tu trayectoria profesional con nuestro creador de CV impulsado por IA. Profesional, personalizado y listo en minutos.",
-      "get_started": "Empezar Gratis",
-      "learn_more": "Saber Más",
-      "creaatedResume": "CV Creados",
-      "timeSaved": "Horas Ahorradas",
-      "userRating": "Valoración de Usuarios",
+      "get_started": "Empezar gratis",
+      "learn_more": "Saber más",
+      "creaatedResume": "CV creados",
+      "timeSaved": "Horas ahorradas",
+      "userRating": "Valoración de usuarios",
       "readyInFiveMinutes": "Listo en 5 minutos",
-      "fromZeroToHired": "De Cero a Contratado en 5 Minutos",
-      "chooseTemplate": "Elegir Plantilla",
-      "fillContent": "Rellenar Contenido",
+      "fromZeroToHired": "De cero a contratado en 5 minutos",
+      "chooseTemplate": "Elegir plantilla",
+      "fillContent": "Rellenar contenido",
       "downloadResume": "Descargar CV",
       "seconds": "segundos",
       "minutes": "minutos"
@@ -229,10 +229,10 @@
     "features": {
       "ai": {
         "title": "Potenciado por IA",
-        "description": "Sugerencias de contenido inteligentes adaptadas a tu sector"
+        "description": "Sugerencias inteligentes adaptadas a tu sector"
       },
       "fast": {
-        "title": "Súper Rápido",
+        "title": "Súper rápido",
         "description": "Crea tu CV en minutos, no en horas"
       },
       "ats": {
@@ -243,43 +243,51 @@
     }
   },
   "viewer": {
-    "back": "Retour à l'Éditeur",
-    "download": "Télécharger PDF"
+    "back": "Volver al editor",
+    "download": "Descargar PDF"
   },
   "payment": {
-    "title": "Télécharger le CV PDF",
-    "one_time": "Paiement unique",
-    "pay_now": "Payer et télécharger",
-    "emailAddress": "Adresse mail",
-    "paymentInformation": "Information de paiement",
-    "cardNumber": "Numéro de carte",
-    "securePayment": "Payement sécurisé",
-    "pay": "Payer",
+    "title": "Descargar el CV en PDF",
+    "one_time": "Pago único",
+    "pay_now": "Pagar y descargar",
+    "emailAddress": "Correo electrónico",
+    "paymentInformation": "Información de pago",
+    "cardNumber": "Número de tarjeta",
+    "securePayment": "Pago seguro",
+    "pay": "Pagar",
     "features": {
-      "download_pdf": "Téléchargement PDF haute qualité",
-      "unlimited_edits": "Modifications illimitées",
-      "emailSent": "Envoi par mail"
+      "download_pdf": "Descarga de PDF de alta calidad",
+      "extendDownload": "Disponible durante 7 días tras la compra",
+      "emailSent": "Envío por correo"
     },
-    "copyLink": "Copier le lien",
-    "processing": "Traitement du paiement...",
-    "success": "Paiement réussi !",
-    "error": "Échec du paiement. Veuillez réessayer."
+    "errors": {
+      "paymentNonValidated": "El pago no ha sido validado",
+      "paymentFailed": "El pago no se ha realizado con éxito",
+      "paymentError": "Error de pago"
+    },
+    "copyLink": "",
+    "copied": "¡Copiado!",
+    "linkCopied": "Enlace copiado al portapapeles",
+    "downloadLink": "Enlace de descarga",
+    "processing": "Procesando el pago...",
+    "success": "¡Pago realizado con éxito!",
+    "error": "Error en el pago. Por favor, inténtalo de nuevo."
   },
   "sidebar": {
-    "templates": "Modèles"
+    "templates": "Plantillas"
   },
   "headerBar": {
     "getMyResume": "Obtener mi CV",
     "goBackToInputs": "Volver a los datos"
   },
-  "footer":{
-    "quickLinks": "Enlaces Rápidos",
+  "footer": {
+    "quickLinks": "Enlaces rápidos",
     "resources": "Recursos",
     "contactUs": "Contáctanos",
     "resumeTips": "Consejos para el CV",
-    "jobSearch": "Búsqueda de Empleo",
-    "careerAdvice": "Consejos de Carrera",
-    "description": "Creando currículos profesionales con inteligencia artificial",
+    "jobSearch": "Búsqueda de empleo",
+    "careerAdvice": "Consejos profesionales",
+    "description": "Creación de CV profesionales con inteligencia artificial",
     "copyright": "© {year} AI Resume Builder. Todos los derechos reservados."
   }
-} 
+}

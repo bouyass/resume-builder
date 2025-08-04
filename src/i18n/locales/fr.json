@@ -6,20 +6,77 @@
       "sections": {
         "personal": "Informations",
         "experience": "Expérience",
-        "education": "Formation",
+        "education": "Éducation",
         "skills": "Compétences",
         "projects": "Projets",
-        "awards": "Prix",
+        "awards": "Récompenses",
         "hobbies": "Loisirs"
       }
     },
     "sections": {
+      "personal": {
+        "title": "Informations personnelles",
+        "description": "Parlez-nous de vous. Ces informations apparaîtront en haut de votre CV.",
+        "fields": {
+          "photo": {
+            "upload": "Téléverser une photo",
+            "change": "Changer la photo",
+            "remove": "Supprimer"
+          },
+          "fullName": "Nom complet",
+          "title": "Intitulé professionnel",
+          "age": "Âge",
+          "email": "Adresse e-mail",
+          "phone": "Téléphone",
+          "location": "Lieu",
+          "about": "À propos de moi",
+          "website": "Site Web",
+          "linkedin": "Profil LinkedIn",
+          "github": "Profil GitHub",
+          "about_placeholder": "Bref résumé professionnel...",
+          "about_helper": "Écrivez 2 à 4 phrases sur vos objectifs professionnels et vos points forts",
+          "social": {
+            "title": "Réseaux sociaux"
+          }
+        },
+        "placeholders": {
+          "fullName": "Jean Dupont",
+          "title": "Développeur logiciel",
+          "age": "ex : 25",
+          "email": "jean@exemple.fr",
+          "phone": "+33 6 12 34 56 78",
+          "location": "Paris, France",
+          "about": "Partagez votre expérience, vos objectifs et vos compétences clés...",
+          "website": "https://portfolio.fr",
+          "linkedin": "https://linkedin.com/in/jeandupont",
+          "github": "https://github.com/jeandupont"
+        }
+      },
+      "experience": {
+        "title": "Expérience professionnelle",
+        "description": "Ajoutez vos expériences professionnelles et réalisations.",
+        "fields": {
+          "company": "Entreprise",
+          "position": "Poste",
+          "startDate": "Date de début",
+          "endDate": "Date de fin",
+          "current": "Poste actuel",
+          "description": "Description",
+          "location": "Lieu",
+          "addExperience": "Ajouter une expérience"
+        },
+        "placeholders": {
+          "company": "Nom de l'entreprise",
+          "position": "Poste",
+          "description": "Décrivez vos responsabilités et réalisations..."
+        }
+      },
       "skills": {
         "title": "Compétences",
         "description": "Listez vos compétences par catégorie. Activez les niveaux si nécessaire.",
         "show_levels": "Afficher les niveaux",
-        "add_skill_category": "Ajouter une Catégorie de Competences",
-        "add_skill": "Ajouter une Competence",
+        "add_skill_category": "Ajouter une catégorie de compétences",
+        "add_skill": "Ajouter une compétence",
         "levels": {
           "beginner": "Débutant",
           "intermediate": "Intermédiaire",
@@ -28,139 +85,73 @@
         },
         "placeholders": {
           "name": "Nom de la compétence",
-          "category": "Nom de la catégorie ex: Langages de Programmation"
+          "category": "Nom de la catégorie ex : Langages de programmation"
         }
       },
       "education": {
-        "title": "Formation",
-        "description": "Ajoutez votre parcours académique et vos qualifications.",
+        "title": "Éducation",
+        "description": "Ajoutez votre parcours académique et vos diplômes.",
         "fields": {
           "institution": "Établissement",
           "degree": "Diplôme",
-          "gpa": "Moyenne/Note",
+          "gpa": "Moyenne / Note",
           "description": "Description",
-          "startDate": "Date de Démarrage",
-          "endDate": "Date de Fin",
-          "addEducation": "Ajouter une Formation"
+          "startDate": "Date de début",
+          "endDate": "Date de fin",
+          "addEducation": "Ajouter une formation"
         },
         "placeholders": {
-          "institution": "Nom de l'université/école",
-          "degree": "ex: Master en Informatique",
-          "gpa": "ex: 16/20",
-          "description": "Décrivez vos réalisations académiques..."
+          "institution": "Nom de l’université/école",
+          "degree": "ex : Licence en Informatique",
+          "gpa": "ex : 15/20",
+          "description": "Décrivez vos réussites académiques..."
         }
       },
       "projects": {
         "title": "Projets",
-        "description": "Présentez vos projets notables et réalisations.",
+        "description": "Mettez en avant vos projets et réalisations.",
         "project": "Projet",
-        "addProject": "Ajouter un Projet",
+        "addProject": "Ajouter un projet",
         "fields": {
-          "name": "Nom du Projet",
+          "name": "Nom du projet",
           "role": "Rôle",
-          "url": "URL du Projet",
-          "technologies": "Technologies Utilisées",
+          "url": "URL du projet",
+          "technologies": "Technologies utilisées",
           "description": "Description"
         },
         "placeholders": {
           "name": "Titre du projet",
           "role": "Votre rôle dans le projet",
-          "url": "Lien vers le projet/dépôt",
-          "technologies": "ex: React, Node.js, MongoDB",
-          "description": "Décrivez le projet et vos contributions..."
+          "url": "Lien vers le projet ou dépôt",
+          "technologies": "ex : React, Node.js, MongoDB",
+          "description": "Décrivez le projet et votre contribution..."
         }
       },
       "awards": {
-        "title": "Prix & Certifications",
-        "description": "Ajoutez vos récompenses, certifications et reconnaissances.",
-        "addAward": "Ajouter un Prix",
-        "award": "Prix",
-         "addAwardCertification": "Ajouter un prix & une certification",
+        "title": "Récompenses et certifications",
+        "description": "Ajoutez vos certifications, distinctions et reconnaissances.",
+        "addAward": "Ajouter une récompense",
+        "award": "Récompense",
+        "addAwardCertification": "Ajouter récompense & certification",
         "fields": {
           "title": "Titre",
           "issuer": "Organisme",
-          "date": "Date d'Obtention",
-          "expiryDate": "Date d'Expiration",
+          "date": "Date d'obtention",
+          "expiryDate": "Date d'expiration",
           "description": "Description"
         },
         "placeholders": {
-          "name": "Nom du certificat/prix",
-          "issuer": "Nom de l'organisation",
-          "description": "Décrivez la récompense..."
+          "name": "Nom du certificat/récompense",
+          "issuer": "Nom de l’organisme",
+          "description": "Décrivez l’accomplissement..."
         }
       },
       "hobbies": {
-        "title": "Centres d'Intérêt",
+        "title": "Loisirs",
         "description": "Partagez vos intérêts et activités en dehors du travail.",
-        "placeholder": "Tapez un centre d'intérêt et appuyez sur Entrée",
+        "placeholder": "Écrivez un loisir puis appuyez sur Entrée",
         "placeholders": {
-          "input": "Tapez un centre d'intérêt et appuyez sur Entrée"
-        }
-      },
-      "personal": {
-        "title": "Informations Personnelles",
-        "description": "Parlez-nous de vous. Ces informations apparaîtront en haut de votre CV.",
-        "errors": {
-          "required_field": "Ce champ est obligatoire",
-          "invalid_email": "Veuillez entrer une adresse email valide",
-          "invalid_phone": "Veuillez entrer un numéro de téléphone valide",
-          "invalid_url": "Veuillez entrer une URL valide",
-          "name_too_short": "Le nom doit contenir au moins 2 caractères",
-          "about_too_long": "La section À propos doit contenir moins de 500 caractères",
-          "invalid_age": "L'âge doit être compris entre 16 et 100 ans"
-        },
-        "fields": {
-          "photo": {
-            "upload": "Télécharger une photo",
-            "change": "Changer la photo",
-            "remove": "Supprimer"
-          },
-          "fullName": "Nom Complet",
-          "title": "Titre Professionnel",
-          "age": "Âge",
-          "email": "E-mail",
-          "phone": "Téléphone",
-          "location": "Localisation",
-          "about": "À Propos de Moi",
-          "website": "Site Web Personnel",
-          "linkedin": "Profil LinkedIn",
-          "github": "Profil GitHub",
-          "about_placeholder": "Bref résumé professionnel...",
-          "about_helper": "Écrivez 2-4 phrases sur vos objectifs de carrière et vos points forts",
-          "social": {
-            "title": "Réseaux Sociaux"
-          }
-        },
-        "placeholders": {
-          "fullName": "Jean Dupont",
-          "title": "Développeur Web",
-          "age": "ex: 25",
-          "email": "jean@exemple.fr",
-          "phone": "+33 6 12 34 56 78",
-          "location": "Paris, France",
-          "about": "Partagez votre expérience professionnelle, vos objectifs et vos compétences clés...",
-          "website": "https://votreportfolio.fr",
-          "linkedin": "https://linkedin.com/in/jeandupont",
-          "github": "https://github.com/jeandupont"
-        }
-      },
-      "experience": {
-        "title": "Expérience Professionnelle",
-        "description": "Ajoutez vos expériences professionnelles et réalisations.",
-        "fields": {
-          "company": "Entreprise",
-          "position": "Poste",
-          "startDate": "Date de Début",
-          "endDate": "Date de Fin",
-          "current": "Poste Actuel",
-          "description": "Description",
-          "location": "Localisation",
-          "addExperience": "Ajouter une Expérience"
-        },
-        "placeholders": {
-          "company": "Nom de l'entreprise",
-          "position": "Intitulé du poste",
-          "description": "Décrivez vos responsabilités et réalisations..."
+          "input": "Écrivez un loisir puis appuyez sur Entrée"
         }
       }
     },
@@ -168,45 +159,69 @@
       "add": "Ajouter {item}",
       "remove": "Supprimer",
       "save": "Sauvegarder",
-      "preview": "Aperçu du CV"
+      "preview": "Aperçu"
+    },
+    "placeholders": {
+      "fullName": "Jean Dupont",
+      "title": "Développeur logiciel",
+      "age": "ex : 25",
+      "email": "jean@exemple.fr",
+      "phone": "+33 6 12 34 56 78",
+      "location": "Paris, France",
+      "company": "Nom de l'entreprise",
+      "position": "Poste",
+      "description": "Décrivez vos responsabilités et réalisations...",
+      "institution": "Nom de l’université/école",
+      "degree": "ex : Licence en Informatique",
+      "gpa": "ex : 15/20",
+      "skill_name": "Nom de la compétence",
+      "skill_category": "ex : Langages de programmation",
+      "project_name": "Titre du projet",
+      "project_role": "Votre rôle dans le projet",
+      "project_url": "Lien vers le projet ou dépôt",
+      "technologies": "ex : React, Node.js, MongoDB",
+      "award_name": "Nom du certificat/récompense",
+      "issuer": "Nom de l’organisme",
+      "hobby": "Écrivez un loisir puis appuyez sur Entrée",
+      "about": "Partagez votre expérience, vos objectifs et vos compétences clés..."
     },
     "errors": {
       "required_field": "Ce champ est obligatoire",
-      "invalid_email": "Veuillez entrer une adresse email valide",
+      "invalid_email": "Veuillez entrer une adresse e-mail valide",
       "invalid_phone": "Veuillez entrer un numéro de téléphone valide",
       "invalid_url": "Veuillez entrer une URL valide",
       "name_too_short": "Le nom doit contenir au moins 2 caractères",
-      "about_too_long": "La section À propos doit contenir moins de 500 caractères",
-      "invalid_age": "L'âge doit être compris entre 16 et 100 ans",
+      "about_too_long": "La section À propos de moi doit contenir moins de 500 caractères",
+      "invalid_age": "L’âge doit être compris entre 16 et 100 ans",
       "end_date_before_start": "La date de fin ne peut pas être antérieure à la date de début",
       "position_required": "Le poste est obligatoire",
       "start_date_required": "La date de début est obligatoire",
       "end_date_required": "La date de fin est obligatoire",
-      "institution_required": "L'établissement est obligatoire",
+      "institution_required": "L’établissement est obligatoire",
       "degree_required": "Le diplôme est obligatoire",
       "project_name_required": "Le nom du projet est obligatoire",
       "project_role_required": "Le rôle est obligatoire",
       "award_title_required": "Le titre est obligatoire",
-      "award_issuer_required": "L'organisme est obligatoire",
+      "award_issuer_required": "L’organisme est obligatoire",
       "award_date_required": "La date est obligatoire",
       "fix_errors": "Veuillez corriger toutes les erreurs avant de continuer"
     }
   },
   "landing": {
-    "logo": "AI Resume Builder",
+    "logo": "AI Resume",
     "create_resume": "Créer un CV",
     "hero": {
-      "title": "Créez Votre CV Parfait avec l'IA",
-      "subtitle": "Transformez votre parcours professionnel avec notre créateur de CV alimenté par l'IA. Professionnel, personnalisé et prêt en quelques minutes.",
-      "get_started": "Commencer Gratuitement",
-      "learn_more": "En Savoir Plus",
-      "createdResume": "CV Créés",
-      "timeSaved": "Heures Économisées",
-      "userRating": "Note des Utilisateurs",
+      "title": "Créez votre CV parfait avec l'IA",
+      "subtitle": "Transformez votre parcours professionnel avec notre créateur de CV alimenté par IA. Professionnel, personnalisé et prêt en quelques minutes.",
+      "get_started": "Commencer gratuitement",
+      "learn_more": "En savoir plus",
+      "creaatedResume": "CV créés",
+      "timeSaved": "Heures économisées",
+      "userRating": "Évaluation des utilisateurs",
       "readyInFiveMinutes": "Prêt en 5 minutes",
-      "fromZeroToHired": "De Zéro à Embauché en 5 Minutes",
-      "chooseTemplate": "Choisir un Modèle",
-      "fillContent": "Remplir le CV",
+      "fromZeroToHired": "De zéro à embauché en 5 minutes",
+      "chooseTemplate": "Choisir un modèle",
+      "fillContent": "Remplir le contenu",
       "downloadResume": "Télécharger le CV",
       "seconds": "secondes",
       "minutes": "minutes"
@@ -214,122 +229,46 @@
     "features": {
       "ai": {
         "title": "Propulsé par l'IA",
-        "description": "Suggestions de contenu intelligentes adaptées à votre secteur"
+        "description": "Suggestions intelligentes adaptées à votre secteur"
       },
       "fast": {
-        "title": "Ultra Rapide",
+        "title": "Ultra rapide",
         "description": "Créez votre CV en quelques minutes, pas en heures"
       },
       "ats": {
-        "title": "Compatible ATS",
-        "description": "Optimisé pour les systèmes de suivi des candidatures",
-        "highlight": "98% de succès"
-      }
-    }
-  },
-  "customizer": {
-    "title": "Personnaliser le CV",
-    "theme": {
-      "title": "Thème",
-      "modern": "Moderne",
-      "classic": "Classique",
-      "minimal": "Minimal",
-      "professional": "Professionnel"
-    },
-    "colors": {
-      "title": "Couleurs",
-      "selection_info": "Sélectionnez jusqu'à 3 couleurs. L'ordre détermine leur importance dans le design - primaire, secondaire et accent.",
-      "ocean_blue": "Bleu Océan",
-      "forest_green": "Vert Forêt",
-      "royal_purple": "Violet Royal",
-      "prof_gray": "Gris Professionnel",
-      "ruby_red": "Rouge Rubis",
-      "sunset": "Orange Coucher de Soleil",
-      "ocean_teal": "Bleu-vert Océan",
-      "midnight": "Indigo Minuit",
-      "rose": "Rose",
-      "autumn": "Ambre Automne",
-      "emerald": "Émeraude",
-      "slate": "Gris Ardoise",
-      "violet": "Violet",
-      "sky": "Bleu Ciel",
-      "lime": "Vert Lime",
-      "rose_gold": "Or Rose"
-    },
-    "fonts": {
-      "title": "Typographie",
-      "preview_text": "Aa",
-      "text_size": "Taille du Texte",
-      "base_size": "Taille de Base",
-      "modern_clean": "Moderne et épuré",
-      "professional": "Professionnel et lisible",
-      "elegant": "Élégant et stylé",
-      "classic": "Classique et intemporel"
-    },
-    "spacing": {
-      "title": "Espacement",
-      "line_height": "Hauteur de Ligne",
-      "paragraph": "Espacement des Paragraphes"
-    },
-    "paper": {
-      "title": "Mise en Page",
-      "show_header": "Afficher l'En-tête",
-      "show_page_numbers": "Afficher les Numéros de Page",
-      "size": "Format de Page",
-      "sizes": {
-        "a4": "A4",
-        "letter": "Lettre",
-        "legal": "Légal"
-      }
-    },
-    "sections": {
-      "title": "Sections",
-      "visibility": "Visibilité"
-    },
-    "buttons": {
-      "generate": "Générer mon PDF"
-    },
-    "progress": {
-      "almost_done": "Ça prend forme ! Votre CV est presque prêt 🎨",
-      "generating": "Génération de votre CV parfait... ✨"
-    },
-    "sizing": {
-      "title": "Dimensions",
-      "text": "Tailles de Texte",
-      "base_size": "Taille de Base",
-      "text_sizes": {
-        "h1": "Titre 1",
-        "h2": "Titre 2",
-        "h3": "Titre 3",
-        "h4": "Titre 4",
-        "body": "Corps de Texte",
-        "small": "Petit Texte"
+        "title": "Compatible avec les ATS",
+        "description": "Optimisé pour les systèmes de suivi de candidatures",
+        "highlight": "98% de réussite"
       }
     }
   },
   "viewer": {
-    "back": "Retour à l'Éditeur",
+    "back": "Retour à l'éditeur",
     "download": "Télécharger PDF"
   },
   "payment": {
-    "title": "Télécharger le CV PDF",
+    "title": "Télécharger le CV en PDF",
     "one_time": "Paiement unique",
     "pay_now": "Payer et télécharger",
     "emailAddress": "Adresse mail",
     "paymentInformation": "Information de paiement",
     "cardNumber": "Numéro de carte",
-    "securePayment": "Payement sécurisé",
-    "pay": "Payer {amount}",
+    "securePayment": "Paiement sécurisé",
+    "pay": "Payer",
     "features": {
-      "download_pdf": "Téléchargement PDF haute qualité",
-      "emailSent": "Envoi par mail"
+      "download_pdf": "Téléchargement PDF de haute qualité",
+      "extendDownload": "Disponible pendant 7 jours après achat",
+      "emailSent": "Envoi par e-mail"
     },
     "errors": {
       "paymentNonValidated": "Le paiement n'a pas été validé",
-      "paymentFailed": "Le paiement n'a pas abouti",
+      "paymentFailed": "Le paiement a échoué",
       "paymentError": "Erreur de paiement"
     },
     "copyLink": "Copier le lien",
+    "copied": "Copié !",
+    "linkCopied": "Lien copié dans le presse-papiers",
+    "downloadLink": "Lien de téléchargement",
     "processing": "Traitement du paiement...",
     "success": "Paiement réussi !",
     "error": "Échec du paiement. Veuillez réessayer."
@@ -339,17 +278,16 @@
   },
   "headerBar": {
     "getMyResume": "Obtenir mon CV",
-    "goBackToInputs": "Retour à la saisie"
+    "goBackToInputs": "Retour aux données"
   },
   "footer": {
-    "quickLinks": "Liens Rapides",
+    "quickLinks": "Liens rapides",
     "resources": "Ressources",
     "contactUs": "Contactez-nous",
     "resumeTips": "Conseils pour le CV",
-    "jobSearch": "Recherche d'Emploi",
-    "careerAdvice": "Conseils de Carrière",
-    "description": "Création de CV professionnels avec intelligence artificielle",
+    "jobSearch": "Recherche d'emploi",
+    "careerAdvice": "Conseils de carrière",
+    "description": "Création de CV professionnels avec l’intelligence artificielle",
     "copyright": "© {year} AI Resume Builder. Tous droits réservés."
   }
-
-} 
+}

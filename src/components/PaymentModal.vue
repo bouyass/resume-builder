@@ -2,14 +2,14 @@
   <div v-if="show" class="payment-modal-overlay" @click.self="$emit('close')">
     <div class="payment-modal">
       <div class="modal-header">
-        <h2>{{ t('download_professional_cv') }}</h2>
+        <h2>{{ t('payment.title') }}</h2>
         <button class="close-button" @click="$emit('close')">×</button>
       </div>
       
       <div class="modal-content">
         <div class="price-section">
           <div class="price">{{ price }}</div>
-          <span class="price-description">{{ t('instant_access_email') }}</span>
+          <span class="price-description">{{ t('payment.features.download_pdf') }}</span>
         </div>
 
         <div class="features">
@@ -17,30 +17,30 @@
             <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>{{ t('professional_pdf_download') }}</span>
+            <span>{{ t('payment.features.download_pdf') }}</span>
           </div>
           <div class="feature-item">
             <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>{{ t('email_delivery') }}</span>
+            <span>{{ t('payment.features.extendDownload') }}</span>
           </div>
           <div class="feature-item">
             <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>{{ t('unlimited_access') }}</span>
+            <span>{{ t('payment.features.emailSent') }}</span>
           </div>
         </div>
 
         <div class="email-section">
-          <label for="email" class="email-label">{{ t('email_address') }}</label>
+          <label for="email" class="email-label">{{ t('payment.emailAddress') }}</label>
           <input 
             id="email"
             v-model="email" 
             type="email" 
             class="email-input"
-            :placeholder="t('enter_email')"
+            :placeholder="t('resume.sections.personal.placeholders.email')"
             @change="updateEmail"
             required
           />
@@ -48,7 +48,7 @@
 
         <!-- Stripe Card Element -->
         <div class="card-section">
-          <label class="card-label">{{ t('payment_information') }}</label>
+          <label class="card-label">{{ t('payment.paymentInformation') }}</label>
           <div id="card-element" class="card-element">
             <!-- Stripe Elements will mount here -->
           </div>
@@ -64,7 +64,7 @@
             :disabled="processing || !email || !cardComplete"
           >
             <div v-if="processing" class="loading-spinner"></div>
-            <span v-else>{{ t('pay_amount', { amount: price }) }}</span>
+            <span v-else>{{ t('payment.pay', { amount: price }) }}</span>
           </button>
         </div>
 
@@ -72,7 +72,7 @@
           <svg class="lock-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
           </svg>
-          <span>{{ t('secure_payment_stripe') }}</span>
+          <span>{{ t('payment.securePayment') }}</span>
         </div>
       </div>
     </div>
@@ -301,26 +301,26 @@ async function processPayment() {
           emit('close')
         }, 2000)
       } else {
-        emit('error', 'Le paiement n\'a pas été validé')
+        emit('error', t('payment.errors.paymentNonValidated'))
         return
       }
     } else {
-      emit('error', 'Le paiement n\'a pas abouti')
+      emit('error', t('payment.errors.paymentFailed'))
       return
     }
     
   } catch (error: any) {
-    emit('error', 'Erreur de paiement')
+    emit('error', t('payment.errors.paymentError'))
     
     
     // Gestion des erreurs Axios
     if (axios.isAxiosError(error)) {
       const errorMessage = error.response?.data?.error || error.message
       cardError.value = errorMessage
-      emit('error', errorMessage)
+      emit('error', t('payment.errors.paymentFailed'))
     } else {
       cardError.value = error.message || 'Une erreur est survenue lors du paiement'
-      emit('error', error.message)
+      emit('error', t('payment.errors.paymentFailed'))
     }
   } finally {
     processing.value = false

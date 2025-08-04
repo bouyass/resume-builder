@@ -2,30 +2,21 @@
     <div v-if="show" class="payment-modal-overlay" @click.self="$emit('close')">
       <div class="payment-modal">
         <div class="modal-header">
-          <h2>{{ title }}</h2>
+          <h2> {{ t('payment.copyLink') }} </h2>
           <button class="close-button" @click="$emit('close')">×</button>
         </div>
         
         <div class="modal-content">
           <div class="link-section">
-            <p>{{ description }}</p>
-            <span style="color:white;">{{ props.linkText  }}</span>
-            <span style="color:white;">{{ props.link  }}</span>
             <button 
               class="copy-button"
               @click="copyToClipboard"
             >
-              {{ copied ? t('copied') : linkText }}
+              {{ copied ? t('payment.copied') : t('payment.copyLink') }}
             </button>
           </div>
-  
-          <div class="secure-info">
-            <svg class="lock-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2-2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-            </svg>
-            <span>{{ secureNote }}</span>
-          </div>
         </div>
+
       </div>
     </div>
   </template>
@@ -131,8 +122,11 @@
   }
   
   .link-section {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
   
   .link-section p {

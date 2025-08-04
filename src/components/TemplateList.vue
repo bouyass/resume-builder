@@ -84,7 +84,7 @@ const email = ref('')
 const toast = useToast()
 const isSidebarOpen = ref(true)
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 
 const templates = [
   {
@@ -161,7 +161,7 @@ function handlePaymentSuccess(paymentId: Number) {
       icon: "✅"
     })
 
-      refreshKey.value++
+    refreshKey.value++
   }
 }
 

@@ -232,13 +232,22 @@
     "securePayment": "Payement sécurisé",
     "pay": "Payer",
     "features": {
-      "download_pdf": "Téléchargement PDF haute qualité",
+      "download_pdf": "High-quality PDF download",
+      "extendDownload": "Available for download for 7 days after purchase",
       "emailSent": "Envoi par mail"
+    },
+    "errors": {
+      "paymentNonValidated": "Payment was not validated",
+      "paymentFailed": "Payment was unsuccessful",
+      "paymentError": "Payment error"
     },
     "processing": "Traitement du paiement...",
     "success": "Paiement réussi !",
     "error": "Échec du paiement. Veuillez réessayer.",
-    "copyLink": "Copier le lien"
+    "copyLink": "Copy Link",
+    "copied": "Copied!",
+    "linkCopied": "Link copied to clipboard",
+    "downloadLink": "Download Link"
   },
   "sidebar": {
     "templates": "قوالب"
